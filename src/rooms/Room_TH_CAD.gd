@@ -8,7 +8,12 @@ onready var varsAndDesign = get_node("CanvasLayer/VarsAndDesign")
 onready var map = get_node("Map")
 
 func _ready() -> void:
-	ZZInGameUi.start()
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		$CanvasLayer/BackButton2.show()
+		$CanvasLayer/VarsAndDesign.hide()
+		ZZInGameUi.onlyShowButtons()
+	else:
+		ZZInGameUi.start()
 	Globals.currentRoom = Globals.Rooms.CAD
 
 func _on_ClickedLinkToExtern_released() -> void:
@@ -49,12 +54,6 @@ func CanPress() -> bool:
 	elif !Rect2($FlashlightPhoneLayer/Light2D/FlashlightRect.get_global_rect().position,$FlashlightPhoneLayer/Light2D/FlashlightRect.get_rect().size).has_point(get_global_mouse_position()):
 		canPress = false
 	return canPress
-
-#func _input(event: InputEvent) -> void:
-#	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == false and $Camera2D.current_zoom == Vector2($Camera2D.zoom_factor,$Camera2D.zoom_factor):
-#		var evLocal = make_input_local(event)
-#		if !Rect2($CanvasLayer/ColorRect.get_global_rect().position,$CanvasLayer/ColorRect.get_rect().size).has_point(evLocal.position):
-#			$Camera2D.zoom_out(Vector2(512, 300))
 
 func _on_CarTopDown_pressed() -> void:
 	$CanvasLayer/BackgroundUnfocus.color = Color(0,0,0,0.48)
@@ -114,3 +113,6 @@ func _on_DialogOkButton2_released() -> void:
 
 func _on_Timer_timeout() -> void:
 	$CanvasLayer/Control/DialogBox2.show()
+
+func _on_BackButton_pressed() -> void:
+	Globals.returnToSelector()

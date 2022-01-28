@@ -8,6 +8,8 @@ var workplacePos := ["AngleGrinder", "Welding", "Smithing"]
 var rnd = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		ZZInGameUi.onlyShowButtons()
 	$BackLayer/DialogBox/Content.text = "Du befindest dich nun in der Werkstatt der HTL. Hier lernst du handwerkliche Fähigkeiten und baust jedes Jahr neue Werkstücke. Die Tür ins Freie ist mit einem Code gesichert. Löse die Rätsel der einzelnen Werkstücke um das Gebäude zu verlassen."
 	$BackLayer/DialogBox.show()
 	rnd.randomize()
@@ -43,13 +45,9 @@ func _on_BackButton_released() -> void:
 		$AnimationPlayer.play("HideParts")
 
 func _on_Class1_released() -> void:
-#	$BackLayer/VideoRectBackground.show()
-#	Globals.showVideo("Videos/DrehenUndFertigeWerkstuecke.webm", 0, 0, 1024, 551, "true", "true", "NUTCRACKER_KEEPVID", "webm")
-#	$BackLayer/SkipButton.show()
 	$BackButton.hide()
 	$WorkshopParts.hide()
 	$BackLayer/Nutcracker.show()
-#	ZZInGameUi.hideAll()
 	Globals.currentRoom = Globals.Rooms.WS_NUTCRACKER
 	
 
@@ -74,11 +72,6 @@ func _on_SkipButton_released() -> void:
 		$BackLayer/SkipButton.hide()
 		$BackLayer/VideoRectBackground.hide()
 		$BackLayer/Automation.show()
-#	elif Globals.idExists("NUTCRACKER_KEEPVID"):
-#		Globals.removeElement("NUTCRACKER_KEEPVID")
-#		$BackLayer/SkipButton.hide()
-#		$BackLayer/VideoRectBackground.hide()
-#		$BackLayer/Nutcracker.show()
 	elif Globals.idExists("DREHEN_KEEPVID"):
 		Globals.removeElement("DREHEN_KEEPVID")
 		$BackLayer/SkipButton.hide()
@@ -164,7 +157,6 @@ func _on_Class3_released() -> void:
 	$WorkshopParts.hide()
 	ZZInGameUi.hideAll()
 	Globals.currentRoom = Globals.Rooms.WS_SERIAL_PROD
-#	OS.shell_open("")
 
 func _on_BackButtonFromSpbob_released() -> void:
 	$BackLayer/Automation.hide()
@@ -209,7 +201,6 @@ func _on_DialogOkButtonNC_released() -> void:
 	$BackLayer/Nutcracker/DialogBox.hide()
 	for c in $BackLayer/Nutcracker/Nussknacker.get_children():
 		c.show()
-		print("SHWON")
 
 func _on_BackButtonNC_released() -> void:
 	$BackLayer/Nutcracker.hide()
@@ -217,21 +208,18 @@ func _on_BackButtonNC_released() -> void:
 	$WorkshopParts.show()
 
 func _on_GLGFraes_released() -> void:
-	print("RELEASED")
 	$BackLayer/VideoRectBackground.show()
 	Globals.showVideo("Videos/Fraesen.webm", 0, 0, 1024, 551, "true", "true", "FRAESEN_KEEPVID", "webm")
 	$BackLayer/SkipButton.show()
 	ZZInGameUi.hideAll()
 
 func _on_GLGDreh_released() -> void:
-	print("RELEASED")
 	$BackLayer/VideoRectBackground.show()
 	Globals.showVideo("Videos/Drehen.webm", 0, 0, 1024, 551, "true", "true", "DREHEN_KEEPVID", "webm")
 	$BackLayer/SkipButton.show()
 	ZZInGameUi.hideAll()
 
 func _on_NutCracker_released() -> void:
-	print("RELEASED")
 	$BackLayer/VideoRectBackground.show()
 	Globals.showVideo("Videos/nussknacker.webm", 0, 0, 1024, 551, "true", "true", "NUTCRACKER_VID_KEEPVID", "webm")
 	$BackLayer/SkipButton.show()

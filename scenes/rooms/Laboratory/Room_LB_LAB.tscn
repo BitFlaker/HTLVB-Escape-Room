@@ -74,8 +74,8 @@ margin_left = 265.0
 margin_top = 147.0
 margin_right = 782.0
 margin_bottom = 438.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Für den Code wird eine Ziffer benötigt.
 Das Rätsel hat dir aber eine 
 mehrstellige Zahl ausgegeben.
@@ -94,8 +94,8 @@ margin_left = 298.0
 margin_top = 133.0
 margin_right = 751.0
 margin_bottom = 171.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "IMPORTANT NOTE"
 align = 1
 valign = 1
@@ -126,6 +126,7 @@ position = Vector2( 117.143, 586.91 )
 rotation = 3.14159
 scale = Vector2( 0.16, 0.126 )
 normal = ExtResource( 6 )
+
 [connection signal="released" from="LabBackground/CleanLabPhone" to="." method="_on_CleanLabPhone_released"]
 [connection signal="released" from="LabBackground/CodeNote" to="." method="_on_CodeNote_released"]
 [connection signal="released" from="LabBackground/StampZoom" to="." method="_on_StampZoom_released"]

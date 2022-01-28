@@ -14,6 +14,7 @@ func starGameLoadScene() -> void:
 	get_tree().change_scene("res://GameBeginning.tscn")
 
 func _on_startGame_released() -> void:
+	Globals.calledRoomBySelector = Globals.RoomCall.None
 	$AudioStreamPlayer2D.play()
 	$AnimationPlayer.play("startGameAnim")
 
@@ -33,3 +34,7 @@ func _on_Quality_item_selected(index: int) -> void:
 func _on_DialogOkButton_released() -> void:
 	$CanvasLayer/DialogBox.hide()
 	$AudioStreamPlayer2D.play()
+
+func _on_startEpisodes_released() -> void:
+	Globals.calledRoomBySelector = Globals.RoomCall.EpisodeSelector
+	get_tree().change_scene("res://scenes/EpisodeSelector.tscn")

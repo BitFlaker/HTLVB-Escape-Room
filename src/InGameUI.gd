@@ -20,7 +20,7 @@ func _ready() -> void:
 	hideAll()
 
 func _process(delta: float) -> void:
-	if hasStarted:
+	if hasStarted && Globals.calledRoomBySelector == Globals.RoomCall.None:
 		var timeElapsed = OS.get_ticks_msec() - startTime - pausedTicks
 		var totalSeconds = int(timeElapsed / 1000) + penaltySeconds
 		if isInBuildingID == 0: 
@@ -64,6 +64,10 @@ func finished_game() -> void:
 	$CanvasLayer/PauseButton.hide()
 	$CanvasLayer/HintButton.hide()
 
+func onlyShowButtons() -> void:
+	$CanvasLayer/PauseButton.show()
+	$CanvasLayer/HintButton.show()
+
 func start() -> void:
 	if gameFinished: return
 	showAll()
@@ -78,9 +82,10 @@ func pause(hide:bool) -> void:
 
 func resume() -> void:
 	if gameFinished: return
-	if !visible: showAll()
-	hasStarted = true
-	pausedTicks = pausedTicks + (OS.get_ticks_msec() - pauseFrom)
+	if Globals.calledRoomBySelector == Globals.RoomCall.None:
+		if !visible: showAll()
+		hasStarted = true
+		pausedTicks = pausedTicks + (OS.get_ticks_msec() - pauseFrom)
 
 func hideAll() -> void:
 	hide()
@@ -121,16 +126,7 @@ func _on_HintButton_pressed() -> void:
 	Globals.hints[Globals.currentRoom][roomHintCount][1] = 0
 	Globals.addRoomHintCount(Globals.currentRoom, 1)
 	
-#	if roomHintCount == 0:
-#		timePenalty = 30
-#		showHint(Globals.hints[Globals.currentRoom][0], timePenalty)
-#		Globals.addRoomHintCount(Globals.currentRoom, 1)
-#	else: 
-#		timePenalty = 60
-#		if roomHintCount > 1: timePenalty = 0
-#		showHint(Globals.hints[Globals.currentRoom][Globals.hints[Globals.currentRoom].size() - 1], timePenalty)
-#		if roomHintCount == 1: Globals.addRoomHintCount(Globals.currentRoom, 1)
-	if timePenalty > 0: 
+	if timePenalty > 0 && Globals.calledRoomBySelector == Globals.RoomCall.None: 
 		$CanvasLayer/PenaltyViewer.text = str("+ ", timePenalty)
 		$AnimationPlayer.play("showPenalty")
 

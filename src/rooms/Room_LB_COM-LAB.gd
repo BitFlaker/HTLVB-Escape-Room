@@ -6,6 +6,8 @@ var rnd = RandomNumberGenerator.new()
 var canPress = true
 
 func _ready() -> void:
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		ZZInGameUi.onlyShowButtons()
 	$Camera2D.zoom_factor = 0.2
 	$Camera2D.reload()
 	AlignElements()
@@ -52,7 +54,9 @@ func AlignElements() -> void:
 	$LineEdit.rect_position.x = pos4 - 5
 
 func _on_BackButton_released() -> void:
-	if canPress: get_tree().change_scene("res://scenes/rooms/Laboratory/Building_Laboratory.tscn")
+	if Globals.calledRoomBySelector == Globals.RoomCall.None:
+		if canPress: get_tree().change_scene("res://scenes/rooms/Laboratory/Building_Laboratory.tscn")
+	else: Globals.returnToSelector()
 
 func _on_DialogOkButton_released() -> void:
 	$CanvasLayer/DialogBox.hide()

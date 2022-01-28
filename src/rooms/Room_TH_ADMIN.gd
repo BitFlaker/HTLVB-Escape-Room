@@ -7,6 +7,10 @@ var anythingOpen := false
 var thisLevelCode
 
 func _ready() -> void:
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		$CanvasLayer/BackButton.show()
+		$CanvasLayer2/VarsAndDesign.queue_free()
+		ZZInGameUi.onlyShowButtons()
 	thisLevelCode = get_tree().get_root().get_node("Globals").CODE_ADMIN
 	Globals.currentRoom = Globals.Rooms.ADMIN
 	ZZInGameUi.hideAllVisibleTSButtons()
@@ -20,7 +24,7 @@ func _on_ZoomAdminNote_released() -> void:
 	$CanvasLayer/BackgroundUnfocus.color = Color(0,0,0,0.48)
 	$CanvasLayer/Admin_note.show()
 	hideAllButtons()
-	$CanvasLayer2/VarsAndDesign.ChangeMapVisibility(false)
+	if $CanvasLayer2/VarsAndDesign != null: $CanvasLayer2/VarsAndDesign.ChangeMapVisibility(false)
 
 func hideAllButtons() -> void:
 	$CanvasLayer5/AdminNote/Zeugnis/Zeugnis1.hide()
@@ -98,7 +102,7 @@ func _on_GetToAdminBot_released() -> void:
 	justPressed = true
 	anythingOpen = true
 	$TotallyTopLayer.add_child(flag)
-	$CanvasLayer2/VarsAndDesign.ChangeMapVisibility(false)
+	if $CanvasLayer2/VarsAndDesign != null: $CanvasLayer2/VarsAndDesign.ChangeMapVisibility(false)
 	$CanvasLayer/BackgroundUnfocus.color = Color(0,0,0,0.48)
 	hideAllButtons()
 
@@ -107,7 +111,7 @@ func ResetAfterBotClose() -> void:
 	$CanvasLayer/Zeugnis.hide()
 	$CanvasLayer5/GetToAdminBot.show()
 	$CanvasLayer/BackgroundUnfocus.color = Color(0,0,0,0)
-	$CanvasLayer2/VarsAndDesign.ChangeMapVisibility(true)
+	if $CanvasLayer2/VarsAndDesign != null: $CanvasLayer2/VarsAndDesign.ChangeMapVisibility(true)
 	showAllButtons()
 
 func _on_Zeugnis1_released() -> void:
@@ -117,9 +121,12 @@ func _on_Zeugnis1_released() -> void:
 	$CanvasLayer/BackgroundUnfocus.color = Color(0,0,0,0.48)
 	$CanvasLayer/Zeugnis.show()
 	$CanvasLayer5/GetToAdminBot.hide()
-	$CanvasLayer2/VarsAndDesign.ChangeMapVisibility(false)
+	if $CanvasLayer2/VarsAndDesign != null: $CanvasLayer2/VarsAndDesign.ChangeMapVisibility(false)
 	hideAllButtons()
 
 func _on_DialogOkButton_released() -> void:
 	$TotallyTopLayer/DialogBox.hide()
 	ZZInGameUi.showAllPrevVisibleTSButtons()
+
+func _on_BackButton_pressed() -> void:
+	Globals.returnToSelector()

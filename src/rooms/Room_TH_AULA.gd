@@ -3,6 +3,10 @@ extends Node2D
 var _globals
 
 func _ready() -> void:
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		$CanvasLayer3/BackButton.show()
+		$CanvasLayer2/VarsAndDesign.queue_free()
+		ZZInGameUi.onlyShowButtons()
 	Globals.currentRoom = Globals.Rooms.AULA
 	ZZInGameUi.hideAllVisibleTSButtons()
 	$CanvasLayer3/DialogBox/DialogOkButton.show()
@@ -28,3 +32,6 @@ func zoomTotallyOut() -> void:
 func _on_DialogOkButton_released() -> void:
 	ZZInGameUi.showAllPrevVisibleTSButtons()
 	$CanvasLayer3/DialogBox.hide()
+
+func _on_BackButton_pressed() -> void:
+	Globals.returnToSelector()

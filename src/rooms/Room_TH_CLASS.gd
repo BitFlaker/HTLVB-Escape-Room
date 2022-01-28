@@ -11,6 +11,10 @@ var prev := -1
 var currentCLASS = ""
 
 func _ready() -> void:
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		$CanvasLayer/BackButton.show()
+		$CanvasLayer2/VarsAndDesign.queue_free()
+		ZZInGameUi.onlyShowButtons()
 	Globals.currentRoom = Globals.Rooms.CLASS
 	$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = "\n\n\n[center]Finde die passenden Buchstaben zu den Fächerkürzeln und tippe sie einzeln in die Kästchen ein.[/center]"
 	$CanvasLayer/DialogBox.show()
@@ -20,9 +24,12 @@ func _process(_delta: float) -> void:
 		$CanvasLayer/BackgroundUnfocus.hide()
 	if $Code/AIIT.text.to_lower() == "m" and $Code/TMB.text.to_lower() == "a" and $Code/PLP.text.to_lower() == "t" and $Code/BET.text.to_lower() == "u" and $Code/SWP.text.to_lower() == "r" and $Code/FET.text.to_lower() == "a":
 		set_process(false)
-		var codeNum = Globals.CODE_CLASS
-		$CanvasLayer/Label.text = str(codeNum)
-		$AnimationPlayer.play("showUpNumber")
+		if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+			Globals.returnToSelector()
+		else:
+			var codeNum = Globals.CODE_CLASS
+			$CanvasLayer/Label.text = str(codeNum)
+			$AnimationPlayer.play("showUpNumber")
 
 func zoomToTimetable(pos:Vector2, size:Vector2, _class:String) -> void:
 	if IsMapOpen(): return
@@ -145,3 +152,6 @@ func _on_AcceptCode_released() -> void:
 		var codeNum = Globals.CODE_CLASS
 		$CanvasLayer/Label.text = str(codeNum)
 		$AnimationPlayer.play("showUpNumber")
+
+func _on_BackButton_pressed() -> void:
+	Globals.returnToSelector()

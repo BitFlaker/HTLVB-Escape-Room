@@ -11,9 +11,12 @@ func ShowCode(add:String) -> void:
 	enteredCode = str(enteredCode, add)
 	$Code.text = enteredCode
 	if enteredCode == codeToBeEntered:
-		Globals.openNewRoomWithVideo("Videos/Ende.webm", "res://scenes/GameEnd.tscn")
-		ZZInGameUi.pause(true)
-		ZZInGameUi.finished_game()
+		if Globals.calledRoomBySelector == Globals.RoomCall.None:
+			Globals.openNewRoomWithVideo("Videos/Ende.webm", "res://scenes/GameEnd.tscn")
+			ZZInGameUi.pause(true)
+			ZZInGameUi.finished_game()
+		else:
+			Globals.returnToSelector()
 
 func _on_1_released() -> void: ShowCode("1")
 func _on_2_released() -> void: ShowCode("2")

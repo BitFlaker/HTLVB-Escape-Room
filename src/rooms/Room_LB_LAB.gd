@@ -4,6 +4,8 @@ var hasVisitedLearningApps := false
 var canClick := true
 
 func _ready() -> void:
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		ZZInGameUi.onlyShowButtons()
 	Globals.currentRoom = Globals.Rooms.LAB
 
 func _on_StampZoom_released() -> void:
@@ -13,7 +15,9 @@ func _on_StampZoom_released() -> void:
 		$Camera2D.zoom_in(($ColorRect.rect_position + ($ColorRect.rect_size / Vector2(2,2))) - $Camera2D.get_camera_position())
 
 func _on_BackButton_released() -> void:
-	if canClick: get_tree().change_scene("res://scenes/rooms/Laboratory/Building_Laboratory.tscn")
+	if Globals.calledRoomBySelector == Globals.RoomCall.None:
+		if canClick: get_tree().change_scene("res://scenes/rooms/Laboratory/Building_Laboratory.tscn")
+	else: Globals.returnToSelector()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == false and $Camera2D.current_zoom == Vector2($Camera2D.zoom_factor,$Camera2D.zoom_factor):
@@ -40,7 +44,7 @@ func _on_CodeNote_released() -> void:
 			canClick = false
 		else:
 			$CanvasLayer/DialogBox/Important.show()
-			$CanvasLayer/DialogBox/Content.text = "Hilft zuerst beim\nAufräumen der Labore!"
+			$CanvasLayer/DialogBox/Content.text = "Hilf zuerst beim\nAufräumen der Labore!"
 			$CanvasLayer/DialogBox.show()
 			canClick = false
 

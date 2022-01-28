@@ -9,6 +9,7 @@ var settingsMusic = 100
 var settingsSFX = 100
 var mediaQuality = MediaQuality.low
 var shownLabMessage = false
+var calledRoomBySelector = RoomCall.None
 
 var code
 var CODE_ADMIN
@@ -192,6 +193,25 @@ enum Rooms {
 	B_LABORATORY,
 	B_WS
 }
+
+enum RoomCall {
+	None,
+	EpisodeSelector,
+	TheoryRoomSelector,
+	LabRoomSelector
+}
+
+func returnToSelector() -> void:
+	ZZInGameUi.hideAll()
+	TransitionScene.StartTransition()
+
+func changeSceneToSelector() -> void:
+	if calledRoomBySelector == RoomCall.TheoryRoomSelector:
+		 get_tree().change_scene("res://scenes/TheoryRoomSelector.tscn")
+	elif calledRoomBySelector == RoomCall.LabRoomSelector:
+		 get_tree().change_scene("res://scenes/LabRoomSelector.tscn")
+	elif calledRoomBySelector == RoomCall.EpisodeSelector:
+		 get_tree().change_scene("res://scenes/EpisodeSelector.tscn")
 
 var hints = [
 	[["Bei der Code-Eingabe findest du wichtige Informationen.", 30], ["Drehe das 3D-Modell in die Position \"Top\". Zoome in das Bild hinein.", 60], ["Wenn du nochmal auf den Hinweisbutton klickst, bekommst du die Lösung, erhältst jedoch eine Zeitrafe von 10 Minuten.", 0], ["Mit diesem Code kommst du durch die Tür: 7428", 600]],

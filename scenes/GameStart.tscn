@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://graphics/StartEndGame/Start3.png" type="Texture" id=1]
+[ext_resource path="res://graphics/episode_selections/Start neu 2.png" type="Texture" id=1]
 [ext_resource path="res://src/GameStart.gd" type="Script" id=2]
 [ext_resource path="res://graphics/TransparentButton.png" type="Texture" id=3]
 
@@ -16,4 +16,5 @@ texture = ExtResource( 1 )
 position = Vector2( -4.40517, 287.723 )
 scale = Vector2( 0.914525, 0.286768 )
 normal = ExtResource( 3 )
+
 [connection signal="released" from="Start/StartButton" to="." method="_on_StartButton_released"]

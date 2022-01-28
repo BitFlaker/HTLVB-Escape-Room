@@ -267,8 +267,8 @@ margin_top = -291.016
 margin_right = -186.194
 margin_bottom = -256.016
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -282,8 +282,8 @@ margin_top = -136.144
 margin_right = -270.626
 margin_bottom = -101.144
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -297,8 +297,8 @@ margin_top = 128.828
 margin_right = 98.4829
 margin_bottom = 163.828
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -312,8 +312,8 @@ margin_top = 186.357
 margin_right = -427.334
 margin_bottom = 221.357
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -350,8 +350,8 @@ margin_right = 139.0
 margin_bottom = 103.0
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -364,8 +364,8 @@ margin_right = 138.0
 margin_bottom = 155.446
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -378,8 +378,8 @@ margin_right = 139.0
 margin_bottom = 207.086
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -392,8 +392,8 @@ margin_right = 269.0
 margin_bottom = 102.417
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -406,8 +406,8 @@ margin_right = 270.0
 margin_bottom = 152.863
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -420,8 +420,8 @@ margin_right = 275.0
 margin_bottom = 211.0
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -434,8 +434,8 @@ margin_right = 412.0
 margin_bottom = 99.8345
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -448,8 +448,8 @@ margin_right = 409.0
 margin_bottom = 152.863
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -462,8 +462,8 @@ margin_right = 411.0
 margin_bottom = 205.504
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -476,8 +476,8 @@ margin_right = 537.806
 margin_bottom = 102.835
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -490,8 +490,8 @@ margin_right = 538.0
 margin_bottom = 157.475
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -504,8 +504,8 @@ margin_right = 539.0
 margin_bottom = 205.698
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -597,11 +597,11 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0.854902, 0.294118, 1 )
 custom_colors/font_color_shadow = Color( 1, 0.466667, 0, 0.34902 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 5 )
 text = "7"
 align = 1
 valign = 1
@@ -624,6 +624,7 @@ anims/OpenSlideshow = SubResource( 7 )
 anims/ShowNumber = SubResource( 8 )
 
 [node name="Tween" type="Tween" parent="."]
+
 [connection signal="released" from="MZW_Background/Logo_MZW/LogoPress" to="." method="_on_LogoPress_released"]
 [connection signal="released" from="MZW_Background/SlideshowPress" to="." method="_on_SlideshowPress_released"]
 [connection signal="released" from="MZW_Background/ShowInfos" to="." method="_on_ShowInfos_released"]

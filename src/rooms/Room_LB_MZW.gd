@@ -9,7 +9,6 @@ var isInSlideshow := false
 var isSliding := false
 var xDiff := 0.0
 var tutorialShown := false
-var _globals
 const numSeq := ["4", "3", "1", "2"]
 var showingNum := false
 var isInVerein := false
@@ -17,8 +16,9 @@ var isInEuropa := false
 var isInQuizMap := false
 
 func _ready() -> void:
-	_globals = get_tree().get_root().get_node("Globals")
-	$CanvasLayer/Number.text = str(_globals.CODE_MZW)
+	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		ZZInGameUi.onlyShowButtons()
+	$CanvasLayer/Number.text = str(Globals.CODE_MZW)
 	Globals.currentRoom = Globals.Rooms.MZW
 
 func _process(delta: float) -> void:
@@ -70,8 +70,11 @@ func isDone() -> void:
 		$CanvasLayer3/Slides/EuropeCardFillIn/fill3.text == numSeq[2] and
 		$CanvasLayer3/Slides/EuropeCardFillIn/fill4.text == numSeq[3] 
 		) and !showingNum:
-			DisableAllButtons()
-			$AnimationPlayer.play("ShowNumber")
+			if Globals.calledRoomBySelector != Globals.RoomCall.None:
+				Globals.returnToSelector()
+			else:
+				DisableAllButtons()
+				$AnimationPlayer.play("ShowNumber")
 
 func DisableAllButtons() -> void:
 	$MZW_Background/Logo_MZW/LogoPress.hide()
@@ -100,7 +103,9 @@ func _on_BackButton_released() -> void:
 			$CanvasLayer3/Slides.hide()
 			isInSlideshow = false
 	else:
-		get_tree().change_scene("res://scenes/rooms/Laboratory/Building_Laboratory.tscn")
+		if Globals.calledRoomBySelector == Globals.RoomCall.None:
+			get_tree().change_scene("res://scenes/rooms/Laboratory/Building_Laboratory.tscn")
+		else: Globals.returnToSelector()
 
 func _on_CheckEnteredRow_released() -> void: isDone()
 
