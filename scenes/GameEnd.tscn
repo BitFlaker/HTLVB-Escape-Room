@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://graphics/StartEndGame/Ende3.png" type="Texture" id=1]
+[ext_resource path="res://graphics/TransparentButton.png" type="Texture" id=2]
+[ext_resource path="res://src/GameEnd.gd" type="Script" id=3]
+[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://graphics/general/Note2.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 4 )
+
+[node name="GameEnd" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogBox" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.729412, 0.729412, 0.729412, 0.745098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note" type="Sprite" parent="CanvasLayer/DialogBox"]
+position = Vector2( 542.677, 320 )
+scale = Vector2( 0.48824, 0.488241 )
+texture = ExtResource( 5 )
+
+[node name="DialogOkButton" type="TouchScreenButton" parent="CanvasLayer/DialogBox"]
+position = Vector2( 699.294, 383.8 )
+scale = Vector2( 0.100854, 0.135635 )
+normal = ExtResource( 2 )
+
+[node name="Content" type="Label" parent="CanvasLayer/DialogBox"]
+margin_left = 267.0
+margin_top = 132.0
+margin_right = 775.0
+margin_bottom = 461.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+text = "%PLACEHOLDER%"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ende" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.537507, 0.537507 )
+texture = ExtResource( 1 )
+
+[node name="rewardButton" type="TouchScreenButton" parent="Ende"]
+position = Vector2( 278.932, 289.64 )
+scale = Vector2( 0.579024, 0.233426 )
+normal = ExtResource( 2 )
+
+[node name="feedbackButton" type="TouchScreenButton" parent="Ende"]
+position = Vector2( -718.084, 292.252 )
+scale = Vector2( 0.583361, 0.233426 )
+normal = ExtResource( 2 )
+
+[node name="questionsSchool" type="TouchScreenButton" parent="Ende"]
+position = Vector2( -369.342, 121.014 )
+scale = Vector2( 0.946199, 0.233426 )
+normal = ExtResource( 2 )
+[connection signal="released" from="CanvasLayer/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_released"]
+[connection signal="released" from="Ende/rewardButton" to="." method="_on_rewardButton_released"]
+[connection signal="released" from="Ende/feedbackButton" to="." method="_on_feedbackButton_released"]
+[connection signal="released" from="Ende/questionsSchool" to="." method="_on_questionsSchool_released"]

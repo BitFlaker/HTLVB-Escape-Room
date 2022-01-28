@@ -1,0 +1,74 @@
+[gd_scene format=2]
+
+[node name="TableRow" type="ColorRect"]
+anchor_right = 0.2
+margin_top = -7.62939e-06
+margin_right = 0.199997
+margin_bottom = 65.0
+color = Color( 0.909804, 0.909804, 0.909804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monitor" type="ColorRect" parent="."]
+anchor_left = 0.193
+anchor_right = 0.193
+margin_left = -30.556
+margin_top = 13.1272
+margin_right = 30.444
+margin_bottom = 18.1272
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard" type="ColorRect" parent="Monitor"]
+margin_top = 14.0
+margin_right = 61.0
+margin_bottom = 33.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+
+[node name="Mouse" type="ColorRect" parent="Monitor"]
+margin_left = 66.0
+margin_top = 16.0
+margin_right = 72.0
+margin_bottom = 26.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monitor2" type="ColorRect" parent="."]
+anchor_left = 0.739
+anchor_right = 0.739
+margin_left = -30.486
+margin_top = 13.1272
+margin_right = 30.514
+margin_bottom = 18.1272
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard2" type="ColorRect" parent="Monitor2"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -61.0
+margin_top = 14.0
+margin_bottom = 33.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mouse2" type="ColorRect" parent="Monitor2"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 5.0
+margin_top = 16.0
+margin_right = 11.0
+margin_bottom = 26.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

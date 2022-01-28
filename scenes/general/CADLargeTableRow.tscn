@@ -1,0 +1,143 @@
+[gd_scene format=2]
+
+[node name="TableRow" type="ColorRect"]
+anchor_right = 0.4
+margin_top = -7.62939e-06
+margin_right = 0.199997
+margin_bottom = 65.0
+color = Color( 0.909804, 0.909804, 0.909804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monitor" type="ColorRect" parent="."]
+anchor_left = 0.096
+anchor_right = 0.096
+margin_left = -30.3318
+margin_top = 13.1272
+margin_right = 30.6682
+margin_bottom = 18.1272
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard" type="ColorRect" parent="Monitor"]
+anchor_left = 0.096
+anchor_right = 0.096
+margin_left = -5.856
+margin_top = 14.0
+margin_right = 55.144
+margin_bottom = 33.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+
+[node name="Mouse" type="ColorRect" parent="Monitor"]
+anchor_left = 0.19
+anchor_right = 0.19
+margin_left = 54.41
+margin_top = 16.0
+margin_right = 60.41
+margin_bottom = 26.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monitor3" type="ColorRect" parent="."]
+anchor_left = 0.36
+anchor_right = 0.36
+margin_left = -30.519
+margin_top = 13.1272
+margin_right = 30.481
+margin_bottom = 18.1272
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard3" type="ColorRect" parent="Monitor3"]
+anchor_left = 0.36
+anchor_right = 0.36
+margin_left = -21.96
+margin_top = 14.0
+margin_right = 39.04
+margin_bottom = 33.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+
+[node name="Mouse3" type="ColorRect" parent="Monitor3"]
+anchor_left = 0.447
+anchor_right = 0.447
+margin_left = 38.733
+margin_top = 16.0
+margin_right = 44.733
+margin_bottom = 26.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monitor4" type="ColorRect" parent="."]
+anchor_left = 0.616
+anchor_right = 0.616
+margin_left = -30.4278
+margin_top = 13.1272
+margin_right = 30.5722
+margin_bottom = 18.1272
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard4" type="ColorRect" parent="Monitor4"]
+anchor_left = 0.616
+anchor_right = 0.616
+margin_left = -37.576
+margin_top = 14.0
+margin_right = 23.424
+margin_bottom = 33.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mouse4" type="ColorRect" parent="Monitor4"]
+anchor_left = 0.703
+anchor_right = 0.703
+margin_left = 23.117
+margin_top = 16.0
+margin_right = 29.117
+margin_bottom = 26.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monitor2" type="ColorRect" parent="."]
+anchor_left = 0.869
+anchor_right = 0.869
+margin_left = -30.3072
+margin_top = 13.1272
+margin_right = 30.6928
+margin_bottom = 18.1272
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+
+[node name="Keyboard2" type="ColorRect" parent="Monitor2"]
+anchor_left = 0.869
+anchor_right = 0.869
+margin_left = -53.009
+margin_top = 14.0
+margin_right = 7.991
+margin_bottom = 33.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+
+[node name="Mouse2" type="ColorRect" parent="Monitor2"]
+anchor_left = 0.963
+anchor_right = 0.963
+margin_left = 7.257
+margin_top = 16.0
+margin_right = 13.257
+margin_bottom = 26.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

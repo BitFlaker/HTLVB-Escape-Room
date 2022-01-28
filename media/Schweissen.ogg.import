@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Schweissen.ogg-6b442c1689d988925d6d1a1c0f30a13c.oggstr"
+
+[deps]
+
+source_file="res://media/Schweissen.ogg"
+dest_files=[ "res://.import/Schweissen.ogg-6b442c1689d988925d6d1a1c0f30a13c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,243 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://graphics/lab/6.jpg" type="Texture" id=1]
+[ext_resource path="res://src/Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://graphics/TransparentButton.png" type="Texture" id=3]
+[ext_resource path="res://graphics/lab/phone-5494681_1280.png" type="Texture" id=4]
+[ext_resource path="res://src/rooms/Building_Laboratory.gd" type="Script" id=5]
+[ext_resource path="res://src/KeypadLab.gd" type="Script" id=6]
+[ext_resource path="res://font/GidoleFont/Gidole-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://graphics/lab/backArrow.png" type="Texture" id=8]
+[ext_resource path="res://graphics/LaborCode.jpg" type="Texture" id=9]
+[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://graphics/general/Note2.png" type="Texture" id=11]
+[ext_resource path="res://graphics/lab/CheckButton.png" type="Texture" id=12]
+[ext_resource path="res://graphics/general/door.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 10 )
+
+[node name="BuildingLab" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="BackLayer" type="CanvasLayer" parent="."]
+
+[node name="PadBackground" type="ColorRect" parent="BackLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.890196 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LaborCode" type="Sprite" parent="BackLayer/PadBackground"]
+position = Vector2( 512, 17 )
+scale = Vector2( 0.0826065, 0.0826065 )
+texture = ExtResource( 9 )
+
+[node name="Pad" type="Sprite" parent="BackLayer"]
+visible = false
+position = Vector2( 512, 350 )
+scale = Vector2( 0.354057, 0.354057 )
+texture = ExtResource( 4 )
+script = ExtResource( 6 )
+
+[node name="1" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -547.601, -646.348 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="2" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -167.571, -652.333 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="3" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( 239.389, -646.348 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="4" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -529.646, -314.197 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="5" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -167.572, -311.205 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="6" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( 242.381, -314.197 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="7" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -532.639, 26.9309 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="8" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -170.564, 17.9539 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="9" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( 236.396, 14.9617 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="0" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -170.564, 347.113 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="Star" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -529.646, 338.136 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="HashKey" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( 236.396, 344.12 )
+scale = Vector2( 0.390308, 0.506262 )
+normal = ExtResource( 3 )
+
+[node name="Code" type="Label" parent="BackLayer/Pad"]
+margin_left = -529.0
+margin_top = -877.0
+margin_right = 500.0
+margin_bottom = -650.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TouchScreenButton" parent="BackLayer/Pad"]
+position = Vector2( -1116.47, 671.26 )
+rotation = 3.14159
+scale = Vector2( 0.452, 0.356 )
+normal = ExtResource( 8 )
+
+[node name="SkipToWorkshop" type="TextureButton" parent="BackLayer/Pad"]
+visible = false
+margin_left = 1207.43
+margin_top = 453.938
+margin_right = 1534.43
+margin_bottom = 1093.94
+rect_scale = Vector2( 0.339, 0.282 )
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="ColorRect" parent="BackLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.729412, 0.729412, 0.729412, 0.745098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note" type="Sprite" parent="BackLayer/DialogBox"]
+position = Vector2( 542.677, 329.439 )
+scale = Vector2( 0.48824, 0.673315 )
+texture = ExtResource( 11 )
+
+[node name="DialogOkButton" type="TouchScreenButton" parent="BackLayer/DialogBox"]
+position = Vector2( 709.396, 444.413 )
+scale = Vector2( 0.0833154, 0.0882811 )
+normal = ExtResource( 12 )
+
+[node name="Content" type="Label" parent="BackLayer/DialogBox"]
+margin_left = 267.0
+margin_top = 110.0
+margin_right = 775.0
+margin_bottom = 437.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.754666, 0.754666 )
+texture = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+script = ExtResource( 2 )
+
+[node name="Clickables" type="Node2D" parent="."]
+
+[node name="OG" type="Node2D" parent="Clickables"]
+
+[node name="Door" type="TouchScreenButton" parent="Clickables/OG"]
+position = Vector2( 585.751, 146.041 )
+scale = Vector2( 0.0594649, 0.153386 )
+normal = ExtResource( 3 )
+
+[node name="Letters" type="TouchScreenButton" parent="Clickables/OG"]
+position = Vector2( 530.192, 130.167 )
+scale = Vector2( 0.0693863, 0.0554965 )
+normal = ExtResource( 3 )
+
+[node name="EG" type="Node2D" parent="Clickables"]
+
+[node name="Door" type="TouchScreenButton" parent="Clickables/EG"]
+position = Vector2( 587.433, 304.129 )
+scale = Vector2( 0.0594649, 0.153386 )
+normal = ExtResource( 3 )
+
+[node name="Letters" type="TouchScreenButton" parent="Clickables/EG"]
+position = Vector2( 529.351, 288.255 )
+scale = Vector2( 0.0693863, 0.0554965 )
+normal = ExtResource( 3 )
+
+[node name="KG" type="Node2D" parent="Clickables"]
+
+[node name="NumPadUnlock" type="TouchScreenButton" parent="Clickables/KG"]
+position = Vector2( 594.513, 476.451 )
+scale = Vector2( 0.0474265, 0.134723 )
+normal = ExtResource( 3 )
+
+[node name="Letters" type="TouchScreenButton" parent="Clickables/KG"]
+position = Vector2( 528.51, 452.23 )
+scale = Vector2( 0.0693863, 0.0554965 )
+normal = ExtResource( 3 )
+[connection signal="released" from="BackLayer/Pad/1" to="BackLayer/Pad" method="_on_1_released"]
+[connection signal="released" from="BackLayer/Pad/2" to="BackLayer/Pad" method="_on_2_released"]
+[connection signal="released" from="BackLayer/Pad/3" to="BackLayer/Pad" method="_on_3_released"]
+[connection signal="released" from="BackLayer/Pad/4" to="BackLayer/Pad" method="_on_4_released"]
+[connection signal="released" from="BackLayer/Pad/5" to="BackLayer/Pad" method="_on_5_released"]
+[connection signal="released" from="BackLayer/Pad/6" to="BackLayer/Pad" method="_on_6_released"]
+[connection signal="released" from="BackLayer/Pad/7" to="BackLayer/Pad" method="_on_7_released"]
+[connection signal="released" from="BackLayer/Pad/8" to="BackLayer/Pad" method="_on_8_released"]
+[connection signal="released" from="BackLayer/Pad/9" to="BackLayer/Pad" method="_on_9_released"]
+[connection signal="released" from="BackLayer/Pad/0" to="BackLayer/Pad" method="_on_0_released"]
+[connection signal="released" from="BackLayer/Pad/Star" to="BackLayer/Pad" method="_on_Star_released"]
+[connection signal="released" from="BackLayer/Pad/BackButton" to="BackLayer/Pad" method="_on_BackButton_released"]
+[connection signal="pressed" from="BackLayer/Pad/SkipToWorkshop" to="." method="_on_SkipToWorkshop_pressed"]
+[connection signal="released" from="BackLayer/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_released"]
+[connection signal="released" from="Clickables/OG/Door" to="." method="_on_OG_released"]
+[connection signal="released" from="Clickables/OG/Letters" to="." method="_on_OG_released"]
+[connection signal="released" from="Clickables/EG/Door" to="." method="_on_EG_released"]
+[connection signal="released" from="Clickables/EG/Letters" to="." method="_on_EG_released"]
+[connection signal="released" from="Clickables/KG/NumPadUnlock" to="." method="_on_NumPadUnlock_released"]
+[connection signal="released" from="Clickables/KG/Letters" to="." method="_on_Laboratories_released"]

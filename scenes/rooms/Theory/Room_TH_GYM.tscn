@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/general/VarsAndDesign.tscn" type="PackedScene" id=1]
+[ext_resource path="res://graphics/gym/IMG_9475_low.JPG" type="Texture" id=2]
+[ext_resource path="res://graphics/TransparentButton.png" type="Texture" id=3]
+[ext_resource path="res://src/rooms/Room_TH_GYM.gd" type="Script" id=4]
+[ext_resource path="res://graphics/gym/Bildschirm_hole_low.png" type="Texture" id=5]
+[ext_resource path="res://graphics/gym/ScreenContent_low.JPG" type="Texture" id=6]
+[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://graphics/general/Note2.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 7 )
+
+[node name="RoomGYM" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="BackgroundUnfocus" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.729412, 0.729412, 0.729412, 0.745098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note2" type="Sprite" parent="CanvasLayer/DialogBox"]
+position = Vector2( 542.677, 320 )
+scale = Vector2( 0.48824, 0.488241 )
+texture = ExtResource( 8 )
+
+[node name="DialogOkButton" type="TouchScreenButton" parent="CanvasLayer/DialogBox"]
+position = Vector2( 699.294, 383.8 )
+scale = Vector2( 0.100854, 0.135635 )
+normal = ExtResource( 3 )
+
+[node name="Content" type="Label" parent="CanvasLayer/DialogBox"]
+margin_left = 267.0
+margin_top = 200.0
+margin_right = 775.0
+margin_bottom = 379.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+text = "Sieh dir das Handy
+genauer an."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="VarsAndDesign" parent="CanvasLayer2" instance=ExtResource( 1 )]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer2"]
+position = Vector2( 512.561, 300.374 )
+scale = Vector2( 0.600748, 0.600748 )
+texture = ExtResource( 2 )
+
+[node name="ScreenContent" type="Sprite" parent="CanvasLayer2"]
+visible = false
+position = Vector2( 551.951, 302.748 )
+scale = Vector2( 0.652523, 0.652522 )
+texture = ExtResource( 6 )
+
+[node name="ScreenDrag" type="TouchScreenButton" parent="CanvasLayer2"]
+visible = false
+position = Vector2( 206.365, 132.166 )
+scale = Vector2( 0.875902, 0.565823 )
+normal = ExtResource( 3 )
+
+[node name="onScreenLook" type="Sprite" parent="CanvasLayer2"]
+visible = false
+position = Vector2( 512, 300 )
+scale = Vector2( 0.639659, 0.639659 )
+texture = ExtResource( 5 )
+
+[node name="PhoneTouches" type="Node2D" parent="CanvasLayer2"]
+
+[node name="TouchScreenButton1" type="TouchScreenButton" parent="CanvasLayer2/PhoneTouches"]
+position = Vector2( 790.644, 374.627 )
+rotation = 0.919789
+scale = Vector2( 0.148888, 0.182193 )
+normal = ExtResource( 3 )
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer2/PhoneTouches"]
+position = Vector2( 697.576, 433.319 )
+rotation = 0.919789
+scale = Vector2( 0.0719857, 0.13648 )
+normal = ExtResource( 3 )
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="CanvasLayer2/PhoneTouches"]
+position = Vector2( 732.518, 479.186 )
+rotation = 0.919789
+scale = Vector2( 0.0805336, 0.0883249 )
+normal = ExtResource( 3 )
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="CanvasLayer2/PhoneTouches"]
+position = Vector2( 896.258, 367.471 )
+rotation = 0.919789
+scale = Vector2( 0.076002, 0.146946 )
+normal = ExtResource( 3 )
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="CanvasLayer2/PhoneTouches"]
+position = Vector2( 835.536, 343.488 )
+rotation = 0.919789
+scale = Vector2( 0.069749, 0.0906634 )
+normal = ExtResource( 3 )
+
+[node name="LeftSideBlack" type="ColorRect" parent="CanvasLayer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -974.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="released" from="CanvasLayer/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_released"]
+[connection signal="pressed" from="CanvasLayer2/ScreenDrag" to="." method="_on_ScreenDrag_pressed"]
+[connection signal="released" from="CanvasLayer2/ScreenDrag" to="." method="_on_ScreenDrag_released"]
+[connection signal="released" from="CanvasLayer2/PhoneTouches/TouchScreenButton1" to="." method="_on_TouchScreenButton1_released"]
+[connection signal="released" from="CanvasLayer2/PhoneTouches/TouchScreenButton2" to="." method="_on_TouchScreenButton1_released"]
+[connection signal="released" from="CanvasLayer2/PhoneTouches/TouchScreenButton3" to="." method="_on_TouchScreenButton1_released"]
+[connection signal="released" from="CanvasLayer2/PhoneTouches/TouchScreenButton4" to="." method="_on_TouchScreenButton1_released"]
+[connection signal="released" from="CanvasLayer2/PhoneTouches/TouchScreenButton5" to="." method="_on_TouchScreenButton1_released"]

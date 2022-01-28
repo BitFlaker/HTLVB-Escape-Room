@@ -1,0 +1,2 @@
+To get the best experience:
+    * enable the option for autoplaying media and audio in the browser

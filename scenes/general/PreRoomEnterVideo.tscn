@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://graphics/SkipArrow.png" type="Texture" id=1]
+[ext_resource path="res://src/PreRoomEnterVideo.gd" type="Script" id=2]
+
+[node name="PreRoomEnterVideo" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="VideoRectBackground" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkipButton" type="TouchScreenButton" parent="."]
+position = Vector2( 949.411, 552.233 )
+scale = Vector2( 0.353047, 0.353047 )
+normal = ExtResource( 1 )
+[connection signal="released" from="SkipButton" to="." method="_on_SkipButton_released"]

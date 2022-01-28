@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/GameBeginning.gd" type="Script" id=2]
+[ext_resource path="res://graphics/SkipArrow.png" type="Texture" id=4]
+
+[node name="GameBeginning" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SkipButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 949.411, 552.233 )
+scale = Vector2( 0.353047, 0.353047 )
+normal = ExtResource( 4 )
+[connection signal="released" from="CanvasLayer/SkipButton" to="." method="_on_SkipButton_released"]
