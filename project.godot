@@ -14,7 +14,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="TagDerOffenenTuerEscapeGame"
+config/name="VHTL Adventure Game"
 run/main_scene="res://scenes/GameStart.tscn"
 config/icon="res://icon.png"
 

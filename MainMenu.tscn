@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://graphics/menu/MenuBackground.jpg" type="Texture" id=1]
 [ext_resource path="res://graphics/menu/MenuOptions.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://graphics/menu/AddButton.png" type="Texture" id=6]
 [ext_resource path="res://graphics/menu/RemoveButton.png" type="Texture" id=7]
 [ext_resource path="res://font/besley/Besley-Bold.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://MainMenuControlTheme.tres" type="Theme" id=9]
+[ext_resource path="res://graphics/lab/ArrowDown.png" type="Texture" id=9]
+[ext_resource path="res://font/besley/Besley-Medium.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://src/MenuOptionsMenu.gd" type="Script" id=12]
 [ext_resource path="res://font/GidoleFont/Gidole-Regular.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=14]
@@ -27,6 +28,13 @@ font_data = ExtResource( 13 )
 size = 80
 use_filter = true
 font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=1450]
+size = 56
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=1451]
+bg_color = Color( 0.0431373, 0.0470588, 0.180392, 0.823529 )
 
 [sub_resource type="DynamicFont" id=1446]
 size = 45
@@ -313,7 +321,10 @@ margin_right = 585.0
 margin_bottom = 442.811
 rect_min_size = Vector2( 0.85, 0.85 )
 rect_scale = Vector2( 0.85, 0.85 )
-theme = ExtResource( 9 )
+custom_constants/arrow_margin = 20
+custom_fonts/font = SubResource( 1450 )
+custom_icons/arrow = ExtResource( 9 )
+custom_styles/normal = SubResource( 1451 )
 text = " medium"
 __meta__ = {
 "_edit_use_anchors_": false

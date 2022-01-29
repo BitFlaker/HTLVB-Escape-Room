@@ -141,6 +141,7 @@ limit_top = 0
 
 [node name="BotAnswerTimer" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="text_entered" from="CanvasLayer2/Messager/TextEditor" to="." method="_on_TextEditor_text_entered"]
 [connection signal="released" from="CanvasLayer2/BackButton/GoBackButton" to="." method="_on_GoBackButton_released"]
 [connection signal="timeout" from="BotAnswerTimer" to="." method="_on_BotAnswerTimer_timeout"]
