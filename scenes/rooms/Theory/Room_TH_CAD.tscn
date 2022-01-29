@@ -1024,6 +1024,7 @@ __meta__ = {
 }
 
 [node name="BackButton2" type="TextureButton" parent="CanvasLayer"]
+visible = false
 margin_left = 112.0
 margin_top = 588.0
 margin_right = 212.0

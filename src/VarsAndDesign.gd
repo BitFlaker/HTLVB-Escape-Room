@@ -60,10 +60,18 @@ func _on_OpenMapButton_pressed() -> void:
 		_globals.removeElement("GymHTLWarriorVideo")
 	if canBePressed:
 		canBePressed = false
-		if get_tree().get_root().get_children()[2].get_node_or_null("CanvasLayer/BackgroundUnfocus") != null:
-			get_tree().get_root().get_children()[2].get_node("CanvasLayer/BackgroundUnfocus").show()
-		if get_tree().get_root().get_children()[2].get_node_or_null("CanvasLayer/BackgroundUnfocus") != null:
-			get_tree().get_root().get_children()[2].get_node("CanvasLayer/BackgroundUnfocus").color = Color(0,0,0,0.48)
+		
+		var level
+		var globalScenes = ["Globals", "ZZInGameUi", "TransitionScene"]
+		for c in get_tree().get_root().get_children():
+			if !globalScenes.has(c.name):
+				level = c
+				break
+		
+		if level.get_node_or_null("CanvasLayer/BackgroundUnfocus") != null:
+			level.get_node("CanvasLayer/BackgroundUnfocus").show()
+		if level.get_node_or_null("CanvasLayer/BackgroundUnfocus") != null:
+			level.get_node("CanvasLayer/BackgroundUnfocus").color = Color(0,0,0,0.48)
 		var loadedMap = map.instance()
 		loadedMap.rect_scale = Vector2(0.65, 0.65)
 		loadedMap.anchor_left = 0.5
@@ -72,7 +80,7 @@ func _on_OpenMapButton_pressed() -> void:
 		loadedMap.anchor_bottom = 0.5
 		loadedMap.rect_position = Vector2(-loadedMap.rect_size.x/3,-loadedMap.rect_size.y/3)
 		loadedMap.setValues()
-		get_tree().get_root().get_children()[2].get_node("CanvasLayer").add_child(loadedMap)
+		level.get_node("CanvasLayer").add_child(loadedMap)
 
 func ChangeMapVisibility(isVisible:bool) -> void:
 	if isVisible: $CanvasLayer/HBoxContainer.show()

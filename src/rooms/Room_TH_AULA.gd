@@ -11,7 +11,6 @@ func _ready() -> void:
 	ZZInGameUi.hideAllVisibleTSButtons()
 	$CanvasLayer3/DialogBox/DialogOkButton.show()
 
-
 func _on_Monitor_released() -> void:
 	_globals = get_tree().get_root().get_node("Globals")
 	$AnimationPlayer.play("GetInScreen")

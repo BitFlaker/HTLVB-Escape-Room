@@ -34,10 +34,12 @@ func _on_ExitCADRoom_released() -> void:
 			$CanvasLayer/DialogBox.show()
 
 func _on_RoomSelect_AULA_released() -> void:
-	if $CanvasLayer/BackgroundUnfocus.color != Color(0,0,0,0.48): get_node("Map")._on_RoomSelect_TH_AULA_released()
+	if $CanvasLayer/BackgroundUnfocus.color != Color(0,0,0,0.48): 
+		get_node("Map")._on_RoomSelect_TH_AULA_released()
 
 func _on_RoomSelect_CLASS_released() -> void:
-	if $CanvasLayer/BackgroundUnfocus.color != Color(0,0,0,0.48): get_node("Map")._on_RoomSelect_TH_CLASS_released()
+	if $CanvasLayer/BackgroundUnfocus.color != Color(0,0,0,0.48): 
+		get_node("Map")._on_RoomSelect_TH_CLASS_released()
 
 func _on_RoomSelect_MAP_released() -> void:
 	pass

@@ -28,4 +28,5 @@ z_index = -5
 normal = ExtResource( 1 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/OpenMaapButton" to="." method="_on_OpenMapButton_pressed"]

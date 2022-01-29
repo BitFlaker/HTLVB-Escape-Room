@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://graphics/Workshop/Werkstatt1.png" type="Texture" id=1]
 [ext_resource path="res://src/Camera2D.gd" type="Script" id=2]
@@ -309,6 +309,21 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BackButton2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -713,7 +728,6 @@ scale = Vector2( 0.353047, 0.353047 )
 normal = ExtResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="BackLayer/Firebasket"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -723,7 +737,6 @@ __meta__ = {
 }
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="BackLayer/Firebasket"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 512, 300 )
 amount = 50
@@ -745,7 +758,6 @@ scale_amount_random = 0.72
 color_ramp = SubResource( 3 )
 
 [node name="Label" type="Label" parent="BackLayer/Firebasket"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1129,6 +1141,19 @@ position = Vector2( -307.062, -54.1335 )
 scale = Vector2( 0.149688, 0.50241 )
 normal = ExtResource( 3 )
 
+[node name="BackButton2" type="TextureButton" parent="."]
+visible = false
+margin_left = 107.0
+margin_top = 595.0
+margin_right = 207.0
+margin_bottom = 675.0
+rect_rotation = 180.0
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="WorkshopParts" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
@@ -1187,6 +1212,7 @@ normal = ExtResource( 6 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FifthClassNumber = SubResource( 11 )
 anims/HideParts = SubResource( 12 )
+anims/RESET = SubResource( 14 )
 anims/ShowParts = SubResource( 13 )
 
 [node name="SmithingSound" type="AudioStreamPlayer2D" parent="."]
@@ -1245,6 +1271,7 @@ stream = ExtResource( 17 )
 [connection signal="released" from="BackLayer/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_released"]
 [connection signal="released" from="WorkshopOverview/ShowAllParts" to="." method="_on_ShowAllParts_released"]
 [connection signal="released" from="WorkshopOverview/CodeEnter" to="." method="_on_CodeEnter_released"]
+[connection signal="pressed" from="BackButton2" to="." method="_on_BackButton2_pressed"]
 [connection signal="released" from="WorkshopParts/Class5" to="." method="_on_Class5_released"]
 [connection signal="released" from="WorkshopParts/Class2" to="." method="_on_Class2_released"]
 [connection signal="released" from="WorkshopParts/Class1" to="." method="_on_Class1_released"]

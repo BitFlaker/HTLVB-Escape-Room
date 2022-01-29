@@ -9,6 +9,7 @@ var rnd = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+		$BackButton2.show()
 		ZZInGameUi.onlyShowButtons()
 	$BackLayer/DialogBox/Content.text = "Du befindest dich nun in der Werkstatt der HTL. Hier lernst du handwerkliche Fähigkeiten und baust jedes Jahr neue Werkstücke. Die Tür ins Freie ist mit einem Code gesichert. Löse die Rätsel der einzelnen Werkstücke um das Gebäude zu verlassen."
 	$BackLayer/DialogBox.show()
@@ -31,6 +32,7 @@ func _ready() -> void:
 func _on_ShowAllParts_released() -> void:
 	if !$AnimationPlayer.is_playing():
 		$AnimationPlayer.play("ShowParts")
+		$BackButton2.hide()
 
 func ShowedPartes() -> void:
 	$WorkshopOverview/ShowAllParts.hide()
@@ -43,13 +45,14 @@ func HidParts() -> void:
 func _on_BackButton_released() -> void:
 	if !$AnimationPlayer.is_playing():
 		$AnimationPlayer.play("HideParts")
+		if Globals.calledRoomBySelector != Globals.RoomCall.None: 
+			$BackButton2.show()
 
 func _on_Class1_released() -> void:
 	$BackButton.hide()
 	$WorkshopParts.hide()
 	$BackLayer/Nutcracker.show()
 	Globals.currentRoom = Globals.Rooms.WS_NUTCRACKER
-	
 
 func _on_Class4_released() -> void:
 	isInClassSubMenu = true
@@ -224,3 +227,6 @@ func _on_NutCracker_released() -> void:
 	Globals.showVideo("Videos/nussknacker.webm", 0, 0, 1024, 551, "true", "true", "NUTCRACKER_VID_KEEPVID", "webm")
 	$BackLayer/SkipButton.show()
 	ZZInGameUi.hideAll()
+
+func _on_BackButton2_pressed() -> void:
+	Globals.returnToSelector()

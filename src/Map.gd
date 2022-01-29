@@ -18,13 +18,20 @@ func _input(event):
 		var evLocal = make_input_local(event)
 		if !Rect2(Vector2(0,0),$MapOpen.get_rect().size).has_point(evLocal.position):
 			if !wasInstancedRightNow and !Rect2(ZZInGameUi.get_node("CanvasLayer/HintButton").rect_global_position, (ZZInGameUi.get_node("CanvasLayer/HintButton").rect_size * ZZInGameUi.get_node("CanvasLayer/HintButton").rect_scale) / rect_scale).has_point(event.position):
-				if get_tree().get_root().get_children()[2].get_node_or_null("CanvasLayer/BackgroundUnfocus") != null:
-					get_tree().get_root().get_children()[2].get_node("CanvasLayer/BackgroundUnfocus").color = Color(0,0,0,0)
+				var level
+				var globalScenes = ["Globals", "ZZInGameUi", "TransitionScene"]
+				for c in get_tree().get_root().get_children():
+					if !globalScenes.has(c.name):
+						level = c
+						break
+				
+				if level.get_node_or_null("CanvasLayer/BackgroundUnfocus") != null:
+					level.get_node("CanvasLayer/BackgroundUnfocus").color = Color(0,0,0,0)
 				queue_free()
-				if get_tree().get_root().get_children()[2].get_node_or_null("CanvasLayer/VarsAndDesign") != null:
-					get_tree().get_root().get_children()[2].get_node("CanvasLayer/VarsAndDesign").canBePressed = true
-				elif get_tree().get_root().get_children()[2].get_node_or_null("CanvasLayer2/VarsAndDesign") != null:
-					get_tree().get_root().get_children()[2].get_node("CanvasLayer2/VarsAndDesign").canBePressed = true
+				if level.get_node_or_null("CanvasLayer/VarsAndDesign") != null:
+					level.get_node("CanvasLayer/VarsAndDesign").canBePressed = true
+				elif level.get_node_or_null("CanvasLayer2/VarsAndDesign") != null:
+					level.get_node("CanvasLayer2/VarsAndDesign").canBePressed = true
 				Globals.currentRoom = previousRoom
 				ZZInGameUi.showAllPrevVisibleTSButtons()
 			else: 

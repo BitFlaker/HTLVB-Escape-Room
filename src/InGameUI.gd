@@ -93,6 +93,9 @@ func hideAll() -> void:
 		if !doDontHide.has(c.name): c.hide()
 
 func showAll() -> void:
+	if Globals.calledRoomBySelector != Globals.RoomCall.None:
+		onlyShowButtons()
+		return
 	show()
 	for c in $CanvasLayer.get_children():
 		if !doDontHide.has(c.name): c.show()

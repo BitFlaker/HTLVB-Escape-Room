@@ -151,7 +151,7 @@ func openNewRoomWithVideo(videoURL:String, finishRoomEnterPath:String) -> void:
 	var root = get_tree().get_root()
 	var tree = get_tree()
 	var level
-	var globalScenes = ["Globals", "ZZInGameUi"]
+	var globalScenes = ["Globals", "ZZInGameUi", "TransitionScene"]
 	
 	for c in get_tree().get_root().get_children():
 		if !globalScenes.has(c.name):
@@ -202,6 +202,10 @@ enum RoomCall {
 }
 
 func returnToSelector() -> void:
+	if Globals.openVideos.size() > 0:
+		for vid in Globals.openVideos:
+			Globals.removeElement(vid)
+		Globals.openVideos.clear()
 	ZZInGameUi.hideAll()
 	TransitionScene.StartTransition()
 

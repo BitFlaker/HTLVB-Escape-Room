@@ -58,7 +58,8 @@ function showVideo(videoUrl, vidPosX, vidPosY, vidSizeX, vidSizeY, gameWidth, ga
     let tobBarHeight = 0
     let tobBarMarginBottom = 0
 	let ratio = window.innerWidth / window.innerHeight
-    let posY = -(window.innerHeight-(window.innerHeight*posYPercentage))
+    //let posY = -(window.innerHeight-(window.innerHeight*posYPercentage))
+    let posY = window.innerHeight*posYPercentage
 	if (ratio < aspectDivision)
 		posY = -((window.innerWidth/aspectDivision) - ((window.innerWidth/aspectDivision)*posYPercentage))-((window.innerHeight-(window.innerWidth/aspectDivision))/2)
     let posX = window.innerWidth * posXPercentage
