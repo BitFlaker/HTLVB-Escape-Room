@@ -12,3 +12,4 @@ media/HowToImplementVideo.txt
 *.ttf
 font/GidoleFont/Readme+Characters.pdf
 *.webm
+export/
