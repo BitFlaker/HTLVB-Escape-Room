@@ -1,7 +1,5 @@
 extends Node2D
 
-var _globals
-
 func _ready() -> void:
 	if Globals.calledRoomBySelector != Globals.RoomCall.None: 
 		$CanvasLayer3/BackButton.show()
@@ -12,13 +10,8 @@ func _ready() -> void:
 	$CanvasLayer3/DialogBox/DialogOkButton.show()
 
 func _on_Monitor_released() -> void:
-	_globals = get_tree().get_root().get_node("Globals")
 	$AnimationPlayer.play("GetInScreen")
 	OS.shell_open("https://learningapps.org/watch?v=p3rfhwhi220")
-
-func showPage() -> void:
-	pass # if it opens in new tab here, it gets recognized as Pop-up.... Has to be embedded
-#	_globals.showWebPage("", "https://learningapps.org/watch?v=p3rfhwhi220")
 
 func zoomToMonitor() -> void:
 	var pos = $CanvasLayer2/Monitor.get_global_transform().get_origin()
@@ -31,6 +24,7 @@ func zoomTotallyOut() -> void:
 func _on_DialogOkButton_released() -> void:
 	ZZInGameUi.showAllPrevVisibleTSButtons()
 	$CanvasLayer3/DialogBox.hide()
+	$CanvasLayer2/Monitor.show()
 
 func _on_BackButton_pressed() -> void:
 	Globals.returnToSelector()

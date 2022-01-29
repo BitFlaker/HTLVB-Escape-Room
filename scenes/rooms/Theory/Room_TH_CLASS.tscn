@@ -20,9 +20,8 @@
 [ext_resource path="res://graphics/timetables/1AHMBT_finish.png" type="Texture" id=18]
 [ext_resource path="res://graphics/timetables/1AFMBM_finish.png" type="Texture" id=19]
 
-[sub_resource type="DynamicFont" id=1]
-size = 123
-use_filter = true
+[sub_resource type="DynamicFont" id=8]
+size = 128
 font_data = ExtResource( 10 )
 
 [sub_resource type="Gradient" id=2]
@@ -227,7 +226,7 @@ position = Vector2( 543.976, 335 )
 scale = Vector2( 0.570324, 0.570325 )
 texture = ExtResource( 9 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DialogBox"]
+[node name="RichTextLabel" type="Label" parent="CanvasLayer/DialogBox"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -236,11 +235,37 @@ margin_left = -287.0
 margin_top = -177.0
 margin_right = 1974.0
 margin_bottom = 1134.0
+rect_min_size = Vector2( 100, 100 )
 rect_scale = Vector2( 0.26, 0.26 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
-bbcode_enabled = true
-meta_underlined = false
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "
+
+
+Finde die passenden Buchstaben zu den Fächerkürzeln und tippe sie einzeln in die Kästchen ein."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heading" type="Label" parent="CanvasLayer/DialogBox"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.0
+margin_top = -177.0
+margin_right = 1974.0
+margin_bottom = -48.0
+rect_min_size = Vector2( 100, 100 )
+rect_scale = Vector2( 0.26, 0.26 )
+custom_colors/font_color = Color( 1, 0.6, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Heading"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

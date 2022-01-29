@@ -1,0 +1,325 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://font/besley/Besley-Bold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/InGameUI.gd" type="Script" id=2]
+[ext_resource path="res://graphics/menu/PauseButton.png" type="Texture" id=3]
+[ext_resource path="res://graphics/menu/HintButton.png" type="Texture" id=4]
+[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://graphics/general/Note3.png" type="Texture" id=6]
+[ext_resource path="res://graphics/menu/fullscreen.png" type="Texture" id=9]
+[ext_resource path="res://graphics/lab/CheckButton.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 128
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/PenaltyViewer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/PenaltyViewer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/PenaltyViewer:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.917647, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/PenaltyViewer:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 32, 40 ), Vector2( 32, 0 ) ]
+}
+
+[node name="InGameUI" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="DialogBox" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.729412, 0.729412, 0.729412, 0.745098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note2" type="Sprite" parent="CanvasLayer/DialogBox"]
+position = Vector2( 542.677, 320 )
+scale = Vector2( 0.48824, 0.488241 )
+texture = ExtResource( 6 )
+
+[node name="DialogOkButton" type="TouchScreenButton" parent="CanvasLayer/DialogBox"]
+position = Vector2( 699.322, 393.936 )
+scale = Vector2( 0.08, 0.08 )
+normal = ExtResource( 10 )
+
+[node name="Content" type="Label" parent="CanvasLayer/DialogBox"]
+margin_left = 267.0
+margin_top = 157.0
+margin_right = 775.0
+margin_bottom = 428.0
+custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Was ist das? Ein Zettel mit dem Code zum Laborgebäude?
+Möchtest du den Zettel verwenden und weitergehen oder lieber die Rätsel selber lösen?"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Important" type="Label" parent="CanvasLayer/DialogBox"]
+visible = false
+margin_left = 298.0
+margin_top = 133.0
+margin_right = 751.0
+margin_bottom = 171.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "IMPORTANT NOTE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option1" type="TextureButton" parent="CanvasLayer/DialogBox"]
+visible = false
+margin_left = 289.0
+margin_top = 397.0
+margin_right = 502.0
+margin_bottom = 459.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/DialogBox/Option1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.129412, 0.129412, 0.129412, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "OPTION 1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option2" type="TextureButton" parent="CanvasLayer/DialogBox"]
+visible = false
+margin_left = 542.61
+margin_top = 397.0
+margin_right = 755.61
+margin_bottom = 459.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/DialogBox/Option2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.129412, 0.129412, 0.129412, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Im Theoriegebäude bleiben"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.729412, 0.729412, 0.729412, 0.745098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -348.5
+margin_top = -216.0
+margin_right = 348.5
+margin_bottom = 216.0
+color = Color( 0.129412, 0.14902, 0.419608, 0.839216 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Important" type="Label" parent="CanvasLayer/PauseMenu/ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -226.5
+margin_top = 16.0
+margin_right = 226.5
+margin_bottom = 54.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "PAUSE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseOkButton" type="TouchScreenButton" parent="CanvasLayer/PauseMenu/ColorRect"]
+position = Vector2( 604.34, 339.876 )
+scale = Vector2( 0.12, 0.12 )
+normal = ExtResource( 10 )
+
+[node name="Content" type="Label" parent="CanvasLayer/PauseMenu"]
+margin_left = 267.0
+margin_top = 200.0
+margin_right = 775.0
+margin_bottom = 379.0
+custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 127.0
+margin_bottom = 34.0
+color = Color( 0.141176, 0.160784, 0.447059, 0.733333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeCounter" type="Label" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = SubResource( 4 )
+text = "00:00:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PenaltyViewer" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 32.0
+margin_top = 40.0
+margin_right = 274.0
+margin_bottom = 169.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_colors/font_color = Color( 0.917647, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "+ 60"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -75.0
+margin_top = 4.68
+margin_right = 181.0
+margin_bottom = 260.68
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HintButton" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -152.0
+margin_top = 4.68
+margin_right = 104.0
+margin_bottom = 260.68
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullScreen" type="TextureButton" parent="CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -68.9999
+margin_top = 10.0
+margin_right = 251.0
+margin_bottom = 321.0
+rect_scale = Vector2( 0.18, 0.18 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/showPenalty = SubResource( 6 )
+
+[connection signal="released" from="CanvasLayer/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_released"]
+[connection signal="pressed" from="CanvasLayer/DialogBox/Option1" to="." method="_on_Option1_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogBox/Option2" to="." method="_on_Option2_pressed"]
+[connection signal="released" from="CanvasLayer/PauseMenu/ColorRect/PauseOkButton" to="." method="_on_PauseOkButton_released"]
+[connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/HintButton" to="." method="_on_HintButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/FullScreen" to="." method="_on_FullScreen_pressed"]

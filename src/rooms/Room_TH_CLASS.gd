@@ -1,11 +1,17 @@
 extends Node2D
 
-var subj_text_FET = "[center][color=#ff9900]FET\nFertigungstechnik\n\n\n[/color][color=#000000]Welche Werkstoffe werden in\nF[color=#4fd128]A[/color]hrzeugen\nverwendet und wie kann man diese Werkstoffe bearbeiten?[/color][/center]"
-var subj_text_PLP = "[center][color=#ff9900]PLP\nPlanung und Projektierung\n\n\n[/color][color=#000000]En[color=#4fd128]T[/color]wurf einer Heizungs-, Kältetechnik-, Lüftungs- und Sanitäranlage [/color][/center]"
-var subj_text_TMB = "[center][color=#ff9900]TMB\nTechnische Mechanik und Berechnung\n\n\n[/color][color=#000000]St[color=#4fd128]A[/color]tik einer Eisenbahnbrücke berechnen[/color][/center]"
-var subj_text_AIIT = "[center][color=#ff9900]AIIT\nAngewandte Informatik und fachspezifische Informationstechnik\n\n\n[/color][color=#000000]Programmieren von \n[color=#4fd128]M[/color]icrocomputern in Haushaltsgeräten oder Garagentoren[/color][/center]"
-var subj_text_SWP = "[center][color=#ff9900]SWP\nSoftwareentwicklung und Projektmanagement\n\n\n[/color][color=#000000]Wie prog[color=#4fd128]R[/color]ammiert man ein Computerspiel?[/color][/center]"
-var subj_text_BET = "[center][color=#ff9900]BET\nBetriebstechnik\n\n\n[/color][color=#000000]Wie ist ein [color=#4fd128]U[/color]nternehmen aufgebaut und organisiert?[/color][/center]"
+var subj_text_FET_H = "FET\nFertigungstechnik"
+var subj_text_FET = "\n\n\n\nWelche Werkstoffe werden in\nF<A>hrzeugen\nverwendet und wie kann man diese Werkstoffe bearbeiten?"
+var subj_text_PLP_H = "PLP\nPlanung und Projektierung"
+var subj_text_PLP = "\n\n\n\n\nEn<T>wurf einer Heizungs-, Kältetechnik-, Lüftungs- und Sanitäranlage"
+var subj_text_TMB_H = "TMB\nTechnische Mechanik und Berechnung"
+var subj_text_TMB = "\n\n\n\n\nSt<A>tik einer Eisenbahnbrücke berechnen"
+var subj_text_AIIT_H = "AIIT\nAngewandte Informatik und fachspezifische Informationstechnik"
+var subj_text_AIIT = "\n\n\n\n\nProgrammieren von\n<M>icrocomputern in Haushaltsgeräten oder Garagentoren"
+var subj_text_SWP_H = "SWP\nSoftwareentwicklung und Projektmanagement"
+var subj_text_SWP = "\n\n\n\n\nWie prog<R>ammiert man ein Computerspiel?"
+var subj_text_BET_H = "BET\nBetriebstechnik"
+var subj_text_BET = "\n\n\n\n\nWie ist ein <U>nternehmen aufgebaut und organisiert?"
 var offsetToReach = Vector2.ZERO
 var prev := -1
 var currentCLASS = ""
@@ -16,8 +22,6 @@ func _ready() -> void:
 		$CanvasLayer2/VarsAndDesign.queue_free()
 		ZZInGameUi.onlyShowButtons()
 	Globals.currentRoom = Globals.Rooms.CLASS
-	$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = "\n\n\n[center]Finde die passenden Buchstaben zu den Fächerkürzeln und tippe sie einzeln in die Kästchen ein.[/center]"
-	$CanvasLayer/DialogBox.show()
 
 func _process(_delta: float) -> void:
 	if $CanvasLayer/BackgroundUnfocus.color == Color(0,0,0,0):
@@ -46,24 +50,31 @@ func _on_DialogClose_pressed() -> void:
 
 func setTextAndShowDialog(subject:String, _class:String) -> void:
 	if IsMapOpen(): return
+	$CanvasLayer/DialogBox/Heading.show()
 	var wasSet = false
-	if subject == "FET": if currentCLASS == _class: 
-		$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = subj_text_FET 
+	if subject == "FET": if currentCLASS == _class:
+		$CanvasLayer/DialogBox/Heading.text = subj_text_FET_H
+		$CanvasLayer/DialogBox/RichTextLabel.text = subj_text_FET
 		wasSet = true
 	if subject == "PLP":  if currentCLASS == _class: 
-		$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = subj_text_PLP 
+		$CanvasLayer/DialogBox/Heading.text = subj_text_PLP_H
+		$CanvasLayer/DialogBox/RichTextLabel.text = subj_text_PLP 
 		wasSet = true
 	if subject == "TMB": if currentCLASS == _class: 
-		$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = subj_text_TMB 
+		$CanvasLayer/DialogBox/Heading.text = subj_text_TMB_H 
+		$CanvasLayer/DialogBox/RichTextLabel.text = subj_text_TMB 
 		wasSet = true
 	if subject == "AIIT": if currentCLASS == _class: 
-		$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = subj_text_AIIT 
+		$CanvasLayer/DialogBox/Heading.text = subj_text_AIIT_H 
+		$CanvasLayer/DialogBox/RichTextLabel.text = subj_text_AIIT 
 		wasSet = true
 	if subject == "SWP": if currentCLASS == _class: 
-		$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = subj_text_SWP 
+		$CanvasLayer/DialogBox/Heading.text = subj_text_SWP_H 
+		$CanvasLayer/DialogBox/RichTextLabel.text = subj_text_SWP 
 		wasSet = true
 	if subject == "BET": if currentCLASS == _class: 
-		$CanvasLayer/DialogBox/RichTextLabel.bbcode_text = subj_text_BET 
+		$CanvasLayer/DialogBox/Heading.text = subj_text_BET_H 
+		$CanvasLayer/DialogBox/RichTextLabel.text = subj_text_BET 
 		wasSet = true
 	if wasSet: $CanvasLayer/DialogBox.show()
 

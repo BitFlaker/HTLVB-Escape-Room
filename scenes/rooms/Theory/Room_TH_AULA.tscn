@@ -141,6 +141,7 @@ __meta__ = {
 [node name="VarsAndDesign" parent="CanvasLayer2" instance=ExtResource( 1 )]
 
 [node name="Monitor" type="TouchScreenButton" parent="CanvasLayer2"]
+visible = false
 position = Vector2( 486.386, 205.733 )
 scale = Vector2( 0.173501, 0.143378 )
 normal = ExtResource( 3 )

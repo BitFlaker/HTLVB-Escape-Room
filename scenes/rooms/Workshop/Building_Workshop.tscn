@@ -418,6 +418,7 @@ tracks/6/keys = {
 script = ExtResource( 5 )
 
 [node name="BackLayer" type="CanvasLayer" parent="."]
+layer = 8
 
 [node name="Nutcracker" type="ColorRect" parent="BackLayer"]
 visible = false
@@ -535,54 +536,6 @@ position = Vector2( 513.58, 278.027 )
 scale = Vector2( 0.89914, 0.89914 )
 texture = ExtResource( 8 )
 
-[node name="Audio1" type="LineEdit" parent="BackLayer/Firebasket/Feuerkorbraetsel_low"]
-visible = false
-margin_left = -480.0
-margin_top = -141.0
-margin_right = -402.0
-margin_bottom = -87.0
-theme = ExtResource( 15 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-align = 1
-max_length = 1
-placeholder_text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Audio2" type="LineEdit" parent="BackLayer/Firebasket/Feuerkorbraetsel_low"]
-visible = false
-margin_left = -295.0
-margin_top = -137.0
-margin_right = -220.0
-margin_bottom = -84.0
-theme = ExtResource( 15 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-align = 1
-max_length = 1
-placeholder_text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Audio3" type="LineEdit" parent="BackLayer/Firebasket/Feuerkorbraetsel_low"]
-visible = false
-margin_left = -101.0
-margin_top = -138.0
-margin_right = -25.0
-margin_bottom = -86.0
-theme = ExtResource( 15 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-align = 1
-max_length = 1
-placeholder_text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="OpenAngleGrinder" type="TouchScreenButton" parent="BackLayer/Firebasket/Feuerkorbraetsel_low"]
 visible = false
 position = Vector2( -418.409, 116.391 )
@@ -624,6 +577,55 @@ visible = false
 position = Vector2( -154.625, -304.61 )
 scale = Vector2( 0.214999, 0.246051 )
 normal = ExtResource( 3 )
+
+[node name="Audio1" type="LineEdit" parent="BackLayer/Firebasket/Feuerkorbraetsel_low"]
+visible = false
+margin_left = -480.0
+margin_top = -141.0
+margin_right = -402.0
+margin_bottom = -87.0
+rect_min_size = Vector2( 78, 54 )
+theme = ExtResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+max_length = 1
+placeholder_text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio2" type="LineEdit" parent="BackLayer/Firebasket/Feuerkorbraetsel_low"]
+visible = false
+margin_left = -295.0
+margin_top = -137.0
+margin_right = -220.0
+margin_bottom = -84.0
+theme = ExtResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+max_length = 1
+placeholder_text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio3" type="LineEdit" parent="BackLayer/Firebasket/Feuerkorbraetsel_low"]
+visible = false
+margin_left = -101.0
+margin_top = -138.0
+margin_right = -25.0
+margin_bottom = -86.0
+theme = ExtResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+max_length = 1
+placeholder_text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CheckEnteredData" type="TouchScreenButton" parent="BackLayer/Firebasket"]
 position = Vector2( 612.442, 152.219 )
@@ -728,6 +730,7 @@ scale = Vector2( 0.353047, 0.353047 )
 normal = ExtResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="BackLayer/Firebasket"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -737,6 +740,7 @@ __meta__ = {
 }
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="BackLayer/Firebasket"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 512, 300 )
 amount = 50
@@ -758,6 +762,7 @@ scale_amount_random = 0.72
 color_ramp = SubResource( 3 )
 
 [node name="Label" type="Label" parent="BackLayer/Firebasket"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1231,9 +1236,6 @@ stream = ExtResource( 17 )
 [connection signal="released" from="BackLayer/Nutcracker/DialogBox/DialogOkButtonNC" to="." method="_on_DialogOkButtonNC_released"]
 [connection signal="released" from="BackLayer/Nutcracker/BackButton" to="." method="_on_BackButtonNC_released"]
 [connection signal="released" from="BackLayer/SkipButton" to="." method="_on_SkipButton_released"]
-[connection signal="text_changed" from="BackLayer/Firebasket/Feuerkorbraetsel_low/Audio1" to="." method="FifthClassCodeChanged"]
-[connection signal="text_changed" from="BackLayer/Firebasket/Feuerkorbraetsel_low/Audio2" to="." method="FifthClassCodeChanged"]
-[connection signal="text_changed" from="BackLayer/Firebasket/Feuerkorbraetsel_low/Audio3" to="." method="FifthClassCodeChanged"]
 [connection signal="released" from="BackLayer/Firebasket/Feuerkorbraetsel_low/OpenAngleGrinder" to="BackLayer/Firebasket" method="_on_OpenAngleGrinder_released"]
 [connection signal="released" from="BackLayer/Firebasket/Feuerkorbraetsel_low/OpenAngleGrinder2" to="BackLayer/Firebasket" method="_on_OpenAngleGrinder_released"]
 [connection signal="released" from="BackLayer/Firebasket/Feuerkorbraetsel_low/OpenFireBasket" to="BackLayer/Firebasket" method="_on_OpenFireBasket_released"]
@@ -1241,6 +1243,9 @@ stream = ExtResource( 17 )
 [connection signal="released" from="BackLayer/Firebasket/Feuerkorbraetsel_low/PlayAudio1" to="." method="_on_PlayAudio1_released"]
 [connection signal="released" from="BackLayer/Firebasket/Feuerkorbraetsel_low/PlayAudio2" to="." method="_on_PlayAudio2_released"]
 [connection signal="released" from="BackLayer/Firebasket/Feuerkorbraetsel_low/PlayAudio3" to="." method="_on_PlayAudio3_released"]
+[connection signal="text_changed" from="BackLayer/Firebasket/Feuerkorbraetsel_low/Audio1" to="." method="FifthClassCodeChanged"]
+[connection signal="text_changed" from="BackLayer/Firebasket/Feuerkorbraetsel_low/Audio2" to="." method="FifthClassCodeChanged"]
+[connection signal="text_changed" from="BackLayer/Firebasket/Feuerkorbraetsel_low/Audio3" to="." method="FifthClassCodeChanged"]
 [connection signal="released" from="BackLayer/Firebasket/CheckEnteredData" to="." method="_on_CheckEnteredData_released"]
 [connection signal="released" from="BackLayer/Firebasket/WeldingPU/SkipButton2" to="BackLayer/Firebasket" method="_on_SkipButton2_released"]
 [connection signal="released" from="BackLayer/Firebasket/AngleGrinderPU/SkipButton2" to="BackLayer/Firebasket" method="_on_SkipButton2_released"]

@@ -43,11 +43,12 @@ font_data = ExtResource( 18 )
 size = 30
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=15]
+size = 64
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=6]
-use_filter = true
+[sub_resource type="DynamicFont" id=14]
+size = 64
 font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -768,6 +769,19 @@ position = Vector2( 512, 300 )
 scale = Vector2( 3.77075, 2.7767 )
 texture = ExtResource( 2 )
 
+[node name="BackButton2" type="TextureButton" parent="CanvasLayer"]
+visible = false
+margin_left = 112.0
+margin_top = 589.0
+margin_right = 212.0
+margin_bottom = 669.0
+rect_rotation = 180.0
+texture_normal = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="RoomSelectFade" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1023,19 +1037,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackButton2" type="TextureButton" parent="CanvasLayer"]
-visible = false
-margin_left = 112.0
-margin_top = 588.0
-margin_right = 212.0
-margin_bottom = 668.0
-rect_rotation = 180.0
-texture_normal = ExtResource( 14 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="BackButton" type="TouchScreenButton" parent="CanvasLayer"]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
@@ -1059,32 +1060,32 @@ rotation = 3.14159
 scale = Vector2( 0.16, 0.126 )
 normal = ExtResource( 14 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MoreInfosContent"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 1.0
-margin_top = 83.0
-margin_right = 510.0
-margin_bottom = 573.0
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
-bbcode_enabled = true
-bbcode_text = "[color=#ffffff][b][center]Was unser HTL-Car alles kann[/center][/b]
+[node name="Heading" type="Label" parent="CanvasLayer/MoreInfosContent"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -448.0
+margin_top = 41.0
+margin_right = 718.0
+margin_bottom = 106.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = SubResource( 15 )
+text = "Was unser HTL-Car alles kann"
 
-In den [b]Konstruktionsübungen[/b] werden einzelne Teile vermessen, konstruiert und mit dem 3D-Drucker ausgedruckt. Fast alle Teile dieses Autos wurden bei uns an der Schule gedruckt. 
+[node name="Content" type="Label" parent="CanvasLayer/MoreInfosContent"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -512.0
+margin_top = 85.0
+margin_right = 1420.0
+margin_bottom = 1714.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = SubResource( 14 )
+text = "In den *Konstruktionsübungen* werden einzelne Teile vermessen, konstruiert und mit dem 3D-Drucker ausgedruckt. Fast alle Teile dieses Autos wurden bei uns an der Schule gedruckt. 
 Zu diesem Auto gibt es natürlich auch eine Fernsteuerung, mit der man das Auto normal steuern kann. Ausserdem sind am Auto ein Minicomputer und ein paar Sensoren montiert mit denen z. B. die aktuelle Geschwindigkeit auf einem externen Bildschirm angezeigt werden kann. 
-Der Einbau, die Verkabelung und die Programmierung aller mechatronischen Komponenten wie Motore, Sensoren, usw. erfolgt in [b]NWES/INFI[/b]. Das Auto wird im Theorieunterricht fahrtüchtig zusammengebaut.
-Im [b]Laborunterricht[/b] und in [b]Konstruktionsübungen[/b] wird ein digitaler Zwilling, das ist ein virtuelles Modell zur Verbindung der realen und der virtuellen Welt, erstellt. Digitale Zwillinge verwenden reale Daten von richtigen Sensoren. Damit können Daten gesammelt, analysiert und zur Überwachung und Problemanalyse verwendet werden, bevor diese überhaupt auftreten. 
-Das Auto dient auch als Übungsbeispiel für Augmented Reality Anwendungen, die viele weitere Möglichkeiten bieten. 
-[/color]"
-text = "Was unser HTL-Car alles kann
-
-In den Konstruktionsübungen werden einzelne Teile vermessen, konstruiert und mit dem 3D-Drucker ausgedruckt. Fast alle Teile dieses Autos wurden bei uns an der Schule gedruckt. 
-Zu diesem Auto gibt es natürlich auch eine Fernsteuerung, mit der man das Auto normal steuern kann. Ausserdem sind am Auto ein Minicomputer und ein paar Sensoren montiert mit denen z. B. die aktuelle Geschwindigkeit auf einem externen Bildschirm angezeigt werden kann. 
-Der Einbau, die Verkabelung und die Programmierung aller mechatronischen Komponenten wie Motore, Sensoren, usw. erfolgt in NWES/INFI. Das Auto wird im Theorieunterricht fahrtüchtig zusammengebaut.
-Im Laborunterricht und in Konstruktionsübungen wird ein digitaler Zwilling, das ist ein virtuelles Modell zur Verbindung der realen und der virtuellen Welt, erstellt. Digitale Zwillinge verwenden reale Daten von richtigen Sensoren. Damit können Daten gesammelt, analysiert und zur Überwachung und Problemanalyse verwendet werden, bevor diese überhaupt auftreten. 
-Das Auto dient auch als Übungsbeispiel für Augmented Reality Anwendungen, die viele weitere Möglichkeiten bieten. 
-"
+Der Einbau, die Verkabelung und die Programmierung aller mechatronischen Komponenten wie Motore, Sensoren, usw. erfolgt in *NWES/INFI*. Das Auto wird im Theorieunterricht fahrtüchtig zusammengebaut.
+Im *Laborunterricht* und in *Konstruktionsübungen* wird ein digitaler Zwilling, das ist ein virtuelles Modell zur Verbindung der realen und der virtuellen Welt, erstellt. Digitale Zwillinge verwenden reale Daten von richtigen Sensoren. Damit können Daten gesammelt, analysiert und zur Überwachung und Problemanalyse verwendet werden, bevor diese überhaupt auftreten. 
+Das Auto dient auch als Übungsbeispiel für Augmented Reality Anwendungen, die viele weitere Möglichkeiten bieten."
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1191,6 +1192,9 @@ text = "\"Kommst du bei einem Rätsel nicht weiter, kannst du dir hier Hinweise 
 Lies die Hinweise genau. Manche erscheinen nur einmal."
 align = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ArrowWhite" type="Sprite" parent="CanvasLayer/HintForHintButton"]
 position = Vector2( 904.095, 134.9 )
@@ -1245,6 +1249,7 @@ normal = ExtResource( 26 )
 [connection signal="released" from="CAD/ClickedLinkToExtern" to="." method="_on_ClickedLinkToExtern_released"]
 [connection signal="released" from="CAD/LightSwitch" to="." method="_on_LightSwitch_released"]
 [connection signal="released" from="CAD/MoreInfos" to="." method="_on_MoreInfos_released"]
+[connection signal="pressed" from="CanvasLayer/BackButton2" to="." method="_on_BackButton_pressed"]
 [connection signal="released" from="CanvasLayer/Control/RoomSelect_AULA2" to="." method="_on_RoomSelect_AULA_released"]
 [connection signal="released" from="CanvasLayer/Control/RoomSelect_AULA3" to="." method="_on_RoomSelect_AULA_released"]
 [connection signal="released" from="CanvasLayer/Control/RoomSelect_CLASS2" to="." method="_on_RoomSelect_CLASS_released"]
@@ -1269,7 +1274,6 @@ normal = ExtResource( 26 )
 [connection signal="released" from="CanvasLayer/Control/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_BuildingInfo_released"]
 [connection signal="timeout" from="CanvasLayer/Control/DialogBox/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="released" from="CanvasLayer/Control/DialogBox2/DialogOkButton" to="." method="_on_DialogOkButton2_released"]
-[connection signal="pressed" from="CanvasLayer/BackButton2" to="." method="_on_BackButton_pressed"]
 [connection signal="released" from="CanvasLayer/BackButton" to="." method="_on_BackButton_released"]
 [connection signal="released" from="CanvasLayer/MoreInfosContent/BackButtonFromMoreInfos" to="." method="_on_BackButtonFromMoreInfos_released"]
 [connection signal="released" from="CanvasLayer/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_released"]
