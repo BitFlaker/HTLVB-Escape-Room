@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/general/VarsAndDesign.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/general/AdminNote.tscn" type="PackedScene" id=2]
@@ -7,12 +7,43 @@
 [ext_resource path="res://graphics/Verwaltung_Notiz Zeugnis_neu.png" type="Texture" id=5]
 [ext_resource path="res://graphics/Zeugnis_neu.png" type="Texture" id=6]
 [ext_resource path="res://graphics/Verwaltung_low.JPG" type="Texture" id=7]
-[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://graphics/general/Note2.png" type="Texture" id=9]
 [ext_resource path="res://graphics/lab/backArrow.png" type="Texture" id=10]
+[ext_resource path="res://graphics/general/coding.png" type="Texture" id=11]
+[ext_resource path="res://src/SignMessageContainer.gd" type="Script" id=12]
+[ext_resource path="res://ButtonStyle.tres" type="StyleBox" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0431373, 0.0705882, 0.0941176, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0431373, 0.0705882, 0.0941176, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="DynamicFont" id=6]
+size = 56
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=10]
+size = 72
 font_data = ExtResource( 8 )
 
 [node name="RoomADMIN" type="Node2D"]
@@ -50,6 +81,113 @@ text = "Sieh dir das Zeugnis, den Zettel am Zeugnis und die Klingel genauer an."
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sign" type="TextureButton" parent="TotallyTopLayer"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 12.0
+margin_top = 35.0
+margin_right = 99.0
+margin_bottom = 122.0
+rect_rotation = -15.0
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundUnfocus" type="ColorRect" parent="TotallyTopLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.027451, 0.0431373, 0.0666667, 0.819608 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignMessageContainer" type="Panel" parent="TotallyTopLayer/BackgroundUnfocus"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -401.0
+margin_top = -240.0
+margin_right = 401.0
+margin_bottom = 206.0
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BubbleContainer" type="Panel" parent="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = 125.0
+margin_right = 75.0
+margin_bottom = 275.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLeft" type="Label" parent="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer/BubbleContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -10.0
+custom_fonts/font = SubResource( 6 )
+text = "10"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignMessage" type="Label" parent="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -376.0
+margin_top = -205.0
+margin_right = 378.0
+margin_bottom = 164.0
+custom_constants/line_spacing = 0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 9 )
+text = "Speedrun? 01001110 01001111 00100000 01000011 01001000 01000101 01000001 01010100 01010011 00100001 00100000 01000010 00110110 00110100 00111111 00100000 01010101 01001000 01001010 01110110 01011010 00110011 01001010 01101000 01100010 01010111 00110001 01110000 01011010 01011000 01001010 00110000 01001001 01001000 01011010 01110110 01100010 01101001 01000010 01101011 01011010 01010111 00110000 01110011 01001001 01000111 01010010 01101100 01100011 01101001 01000010 01000011 01100001 01011000 01010010 01111010 01001001 01001000 01110000 00110001 01100010 01010011 01000010 01000111 01100010 01000111 00111001 01101010 01100001 00110010 01010110 01110101 01001001 01000111 01001010 01111001 01100001 01010111 00110101 01101110 01100100 01000011 00110100 00111101"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer"]
+
+[node name="CopyButton" type="Button" parent="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -60.0
+margin_right = 398.0
+margin_bottom = 124.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/focus = ExtResource( 13 )
+custom_styles/disabled = ExtResource( 13 )
+custom_styles/normal = ExtResource( 13 )
+text = "Kopieren"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -197,6 +335,9 @@ scale = Vector2( 0.0382887, 0.077979 )
 normal = ExtResource( 3 )
 
 [connection signal="released" from="TotallyTopLayer/DialogBox/DialogOkButton" to="." method="_on_DialogOkButton_released"]
+[connection signal="pressed" from="TotallyTopLayer/Sign" to="." method="_on_Sign_pressed"]
+[connection signal="timeout" from="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer/Timer" to="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer" method="_on_Timer_timeout"]
+[connection signal="pressed" from="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer/CopyButton" to="TotallyTopLayer/BackgroundUnfocus/SignMessageContainer" method="_on_CopyButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="released" from="CanvasLayer5/AdminNote/ZoomAdminNote" to="." method="_on_ZoomAdminNote_released"]
 [connection signal="released" from="CanvasLayer5/AdminNote/ZoomAdminNote2" to="." method="_on_ZoomAdminNote_released"]

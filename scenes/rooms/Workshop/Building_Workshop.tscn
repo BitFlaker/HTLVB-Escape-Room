@@ -13,13 +13,10 @@
 [ext_resource path="res://graphics/Workshop/AngleGrinder_img2.JPG" type="Texture" id=11]
 [ext_resource path="res://graphics/Workshop/AngleGrinder_img1.JPG" type="Texture" id=12]
 [ext_resource path="res://graphics/Workshop/Smithing_img1.JPG" type="Texture" id=13]
-[ext_resource path="res://font/besley/Besley-Bold.otf" type="DynamicFontData" id=14]
-[ext_resource path="res://control_theme.tres" type="Theme" id=15]
 [ext_resource path="res://src/Firebasket.gd" type="Script" id=16]
 [ext_resource path="res://media/Winkelschleifer.ogg" type="AudioStream" id=17]
 [ext_resource path="res://media/Schmieden.ogg" type="AudioStream" id=18]
 [ext_resource path="res://media/Schweissen.ogg" type="AudioStream" id=19]
-[ext_resource path="res://font/GidoleFont/Gidole-Regular.ttf" type="DynamicFontData" id=20]
 [ext_resource path="res://graphics/YellowBubble.png" type="Texture" id=21]
 [ext_resource path="res://graphics/automisation/IMG_9674.JPG" type="Texture" id=22]
 [ext_resource path="res://graphics/automisation/Zahnbürste01.png" type="Texture" id=23]
@@ -28,7 +25,7 @@
 [ext_resource path="res://src/PadWorkshop.gd" type="Script" id=26]
 [ext_resource path="res://graphics/lab/phone-5494681_1280.png" type="Texture" id=27]
 [ext_resource path="res://graphics/lab/CheckButton.png" type="Texture" id=28]
-[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=29]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=29]
 [ext_resource path="res://graphics/general/Note2.png" type="Texture" id=30]
 [ext_resource path="res://graphics/Nussknacker_low.png" type="Texture" id=31]
 
@@ -43,7 +40,13 @@ extra_spacing_top = -25
 extra_spacing_bottom = -25
 extra_spacing_char = -10
 extra_spacing_space = -5
-font_data = ExtResource( 14 )
+font_data = ExtResource( 29 )
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0.195, 0.53, 1 )
@@ -52,7 +55,7 @@ colors = PoolColorArray( 0.827148, 0.355063, 0.193863, 0.266667, 1, 0.40567, 0.1
 [sub_resource type="DynamicFont" id=4]
 size = 266
 use_filter = true
-font_data = ExtResource( 20 )
+font_data = ExtResource( 29 )
 
 [sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0, 0.884106, 1 )
@@ -142,7 +145,7 @@ tracks/5/keys = {
 size = 200
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
-font_data = ExtResource( 20 )
+font_data = ExtResource( 29 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 30
@@ -585,9 +588,11 @@ margin_top = -141.0
 margin_right = -402.0
 margin_bottom = -87.0
 rect_min_size = Vector2( 78, 54 )
-theme = ExtResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -601,9 +606,11 @@ margin_left = -295.0
 margin_top = -137.0
 margin_right = -220.0
 margin_bottom = -84.0
-theme = ExtResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -617,9 +624,11 @@ margin_left = -101.0
 margin_top = -138.0
 margin_right = -25.0
 margin_bottom = -86.0
-theme = ExtResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -651,16 +660,6 @@ position = Vector2( 740.59, 186 )
 scale = Vector2( 0.277758, 0.277758 )
 texture = ExtResource( 10 )
 
-[node name="VideoPlayer" type="VideoPlayer" parent="BackLayer/Firebasket/WeldingPU"]
-visible = false
-margin_left = 296.0
-margin_top = 340.0
-margin_right = 732.0
-margin_bottom = 592.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="SkipButton2" type="TouchScreenButton" parent="BackLayer/Firebasket/WeldingPU"]
 position = Vector2( 949.411, 552.233 )
 scale = Vector2( 0.353047, 0.353047 )
@@ -685,16 +684,6 @@ position = Vector2( 740.59, 186 )
 scale = Vector2( 0.277758, 0.277758 )
 texture = ExtResource( 11 )
 
-[node name="VideoPlayer" type="VideoPlayer" parent="BackLayer/Firebasket/AngleGrinderPU"]
-visible = false
-margin_left = 296.0
-margin_top = 340.0
-margin_right = 732.0
-margin_bottom = 592.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="SkipButton2" type="TouchScreenButton" parent="BackLayer/Firebasket/AngleGrinderPU"]
 position = Vector2( 949.411, 552.233 )
 scale = Vector2( 0.353047, 0.353047 )
@@ -713,16 +702,6 @@ __meta__ = {
 position = Vector2( 259.341, 300.491 )
 scale = Vector2( 0.294932, 0.294932 )
 texture = ExtResource( 13 )
-
-[node name="VideoPlayer" type="VideoPlayer" parent="BackLayer/Firebasket/SmithingPU"]
-visible = false
-margin_left = 506.0
-margin_top = 159.0
-margin_right = 995.0
-margin_bottom = 442.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SkipButton2" type="TouchScreenButton" parent="BackLayer/Firebasket/SmithingPU"]
 position = Vector2( 949.411, 552.233 )

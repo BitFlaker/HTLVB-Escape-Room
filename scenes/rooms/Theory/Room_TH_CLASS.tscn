@@ -1,19 +1,17 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/general/VarsAndDesign.tscn" type="PackedScene" id=1]
 [ext_resource path="res://graphics/timetables/1AHWII_finish.png" type="Texture" id=2]
 [ext_resource path="res://graphics/TransparentButton.png" type="Texture" id=3]
 [ext_resource path="res://src/rooms/Room_TH_CLASS.gd" type="Script" id=4]
 [ext_resource path="res://graphics/Klasse finish_low.png" type="Texture" id=5]
-[ext_resource path="res://font/GidoleFont/Gidole-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://graphics/red_back_arrow.png" type="Texture" id=7]
 [ext_resource path="res://graphics/YellowBubble.png" type="Texture" id=8]
 [ext_resource path="res://graphics/general/Note2.png" type="Texture" id=9]
-[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://graphics/lab/CheckButton.png" type="Texture" id=11]
 [ext_resource path="res://graphics/lab/backArrow.png" type="Texture" id=12]
 [ext_resource path="res://src/Camera2D.gd" type="Script" id=13]
-[ext_resource path="res://control_theme.tres" type="Theme" id=14]
 [ext_resource path="res://graphics/timetables/1AHGTI_finish.png" type="Texture" id=15]
 [ext_resource path="res://graphics/timetables/1AHWIM_finish.png" type="Texture" id=16]
 [ext_resource path="res://graphics/timetables/1AHME_finish.png" type="Texture" id=17]
@@ -31,16 +29,31 @@ colors = PoolColorArray( 0.827148, 0.355063, 0.193863, 0.266667, 1, 0.40567, 0.1
 [sub_resource type="DynamicFont" id=3]
 size = 266
 use_filter = true
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFontData" id=4]
-font_path = "res://font/besley/Besley-Fatface.otf"
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 31
 use_filter = true
-extra_spacing_space = -7
-font_data = SubResource( 4 )
+extra_spacing_space = -8
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
 
 [sub_resource type="Animation" id=6]
 length = 3.0
@@ -440,8 +453,10 @@ margin_left = 52.5196
 margin_top = 276.538
 margin_right = 96.5196
 margin_bottom = 321.538
-theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 align = 1
 max_length = 1
 placeholder_text = "A"
@@ -455,8 +470,10 @@ margin_left = 105.473
 margin_top = 276.456
 margin_right = 153.473
 margin_bottom = 321.456
-theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/read_only = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 align = 1
 max_length = 1
 placeholder_text = "A"
@@ -470,8 +487,10 @@ margin_left = 158.862
 margin_top = 277.4
 margin_right = 206.862
 margin_bottom = 322.4
-theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 align = 1
 max_length = 1
 placeholder_text = "A"
@@ -485,8 +504,10 @@ margin_left = 211.083
 margin_top = 276.651
 margin_right = 259.083
 margin_bottom = 321.651
-theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 align = 1
 max_length = 1
 placeholder_text = "A"
@@ -500,8 +521,10 @@ margin_left = 262.041
 margin_top = 278.378
 margin_right = 310.041
 margin_bottom = 323.378
-theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 align = 1
 max_length = 1
 placeholder_text = "A"
@@ -515,8 +538,10 @@ margin_left = 314.543
 margin_top = 278.562
 margin_right = 362.543
 margin_bottom = 323.562
-theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 align = 1
 max_length = 1
 placeholder_text = "A"

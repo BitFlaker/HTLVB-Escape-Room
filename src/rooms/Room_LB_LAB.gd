@@ -37,7 +37,7 @@ func _on_CleanLabPhone_released() -> void:
 func _on_CodeNote_released() -> void:
 	if canClick: 
 		if hasVisitedLearningApps:
-			var divNum = get_tree().get_root().get_node("Globals").takenLabDivNum
+			var divNum = Globals.takenLabDivNum
 			$CanvasLayer/DialogBox/Important.hide()
 			$CanvasLayer/DialogBox/Content.text = str("Für den Code wird eine Ziffer benötigt.\nDas Rätsel hat dir aber eine\nmehrstellige Zahl ausgegeben.\nScheinbar hatte das Rätsel einen\nkleinen Programmierfehler.\nFinde die richtige Ziffer für den Code,\nindem du durch ", divNum, " teilst.")
 			$CanvasLayer/DialogBox.show()

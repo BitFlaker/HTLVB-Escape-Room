@@ -3,10 +3,8 @@ extends Node2D
 export var showMap := true
 var map = load("res://scenes/general/MapOpen.tscn")
 var canBePressed := true
-var _globals
 
 func _ready() -> void:
-	_globals = get_tree().get_root().get_node("Globals")
 	if !showMap:
 		$CanvasLayer/HBoxContainer.hide()
 		
@@ -56,8 +54,8 @@ func showVideo(url: String, posX: int, posY: int, width: int, height: int):
 	JavaScript.eval("showVideo('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % [url, posX, posY, width, height, windowWidth, windowHeight], true)
 
 func _on_OpenMapButton_pressed() -> void:
-	if _globals.idExists("GymHTLWarriorVideo"):
-		_globals.removeElement("GymHTLWarriorVideo")
+	if Globals.idExists("GymHTLWarriorVideo"):
+		Globals.removeElement("GymHTLWarriorVideo")
 	if canBePressed:
 		canBePressed = false
 		

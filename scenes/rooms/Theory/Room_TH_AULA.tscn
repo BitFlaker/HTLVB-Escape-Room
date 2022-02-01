@@ -5,7 +5,7 @@
 [ext_resource path="res://graphics/TransparentButton.png" type="Texture" id=3]
 [ext_resource path="res://graphics/aula/Aula-finish_low.JPG" type="Texture" id=4]
 [ext_resource path="res://src/Camera2D.gd" type="Script" id=5]
-[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://graphics/general/Note2.png" type="Texture" id=7]
 [ext_resource path="res://graphics/lab/backArrow.png" type="Texture" id=8]
 

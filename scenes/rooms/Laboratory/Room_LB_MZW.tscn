@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://graphics/lab/MZW neu.jpg" type="Texture" id=1]
 [ext_resource path="res://src/Camera2D.gd" type="Script" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://graphics/TransparentButton.png" type="Texture" id=4]
 [ext_resource path="res://src/rooms/Room_LB_MZW.gd" type="Script" id=5]
 [ext_resource path="res://graphics/lab/MZW_slide1.png" type="Texture" id=6]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://control_theme.tres" type="Theme" id=11]
-[ext_resource path="res://font/besley/Besley-Bold.otf" type="DynamicFontData" id=12]
-[ext_resource path="res://font/GidoleFont/Gidole-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://graphics/YellowBubble.png" type="Texture" id=15]
 [ext_resource path="res://graphics/lab/backArrow.png" type="Texture" id=16]
 [ext_resource path="res://graphics/lab/CheckButton.png" type="Texture" id=17]
@@ -25,12 +24,24 @@ extra_spacing_top = -25
 extra_spacing_bottom = -25
 extra_spacing_char = -10
 extra_spacing_space = -5
-font_data = ExtResource( 12 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
 
 [sub_resource type="DynamicFont" id=3]
-size = 32
+size = 28
 use_filter = true
-font_data = ExtResource( 12 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0.195, 0.53, 1 )
@@ -39,7 +50,7 @@ colors = PoolColorArray( 0.827148, 0.355063, 0.193863, 0.266667, 1, 0.40567, 0.1
 [sub_resource type="DynamicFont" id=5]
 size = 266
 use_filter = true
-font_data = ExtResource( 14 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="Animation" id=6]
 length = 2.5
@@ -262,13 +273,15 @@ scale = Vector2( 0.810953, 0.810953 )
 texture = ExtResource( 6 )
 
 [node name="fill1" type="LineEdit" parent="CanvasLayer3/Slides/EuropeCardFillIn"]
-margin_left = -223.194
-margin_top = -291.016
-margin_right = -186.194
-margin_bottom = -256.016
-theme = ExtResource( 11 )
+margin_left = -224.427
+margin_top = -287.316
+margin_right = -187.427
+margin_bottom = -252.316
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -277,13 +290,16 @@ __meta__ = {
 }
 
 [node name="fill2" type="LineEdit" parent="CanvasLayer3/Slides/EuropeCardFillIn"]
-margin_left = -307.626
-margin_top = -136.144
-margin_right = -270.626
-margin_bottom = -101.144
+margin_left = -308.279
+margin_top = -133.177
+margin_right = -271.279
+margin_bottom = -98.1766
 theme = ExtResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_styles/read_only = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -292,13 +308,16 @@ __meta__ = {
 }
 
 [node name="fill3" type="LineEdit" parent="CanvasLayer3/Slides/EuropeCardFillIn"]
-margin_left = 61.4829
-margin_top = 128.828
-margin_right = 98.4829
-margin_bottom = 163.828
+margin_left = 62.889
+margin_top = 130.71
+margin_right = 99.889
+margin_bottom = 165.71
 theme = ExtResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_styles/read_only = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 align = 1
 max_length = 1
 placeholder_text = "0"
@@ -307,13 +326,16 @@ __meta__ = {
 }
 
 [node name="fill4" type="LineEdit" parent="CanvasLayer3/Slides/EuropeCardFillIn"]
-margin_left = -464.334
-margin_top = 186.357
-margin_right = -427.334
-margin_bottom = 221.357
+margin_left = -464.885
+margin_top = 187.434
+margin_right = -427.885
+margin_bottom = 222.434
 theme = ExtResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_styles/read_only = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 align = 1
 max_length = 1
 placeholder_text = "0"

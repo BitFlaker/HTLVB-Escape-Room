@@ -6,7 +6,7 @@
 [ext_resource path="res://src/rooms/Room_TH_GYM.gd" type="Script" id=4]
 [ext_resource path="res://graphics/gym/Bildschirm_hole_low.png" type="Texture" id=5]
 [ext_resource path="res://graphics/gym/ScreenContent_low.JPG" type="Texture" id=6]
-[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://graphics/general/Note2.png" type="Texture" id=8]
 [ext_resource path="res://graphics/lab/backArrow.png" type="Texture" id=9]
 

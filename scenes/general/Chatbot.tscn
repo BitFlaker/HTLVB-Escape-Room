@@ -7,12 +7,10 @@
 [ext_resource path="res://graphics/red_back_arrow.png" type="Texture" id=5]
 [ext_resource path="res://scenes/general/ChatBubble.tscn" type="PackedScene" id=6]
 [ext_resource path="res://graphics/BotBG.png" type="Texture" id=7]
-
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://font/GidoleFont/Gidole-Regular.ttf"
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=2]
-font_data = SubResource( 1 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 7 )
@@ -47,7 +45,6 @@ __meta__ = {
 }
 
 [node name="DescriptiveText" type="RichTextLabel" parent="CanvasLayer2"]
-visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -87.0
@@ -60,7 +57,7 @@ bbcode_text = "
 CHAT-BOT v1.2
 
 Benutzen Sie das Eingabefeld unten rechts,
-um Nachrichten szu versenden
+um Nachrichten zu versenden
 
 Danke.[/center][/color]"
 text = "
@@ -68,7 +65,7 @@ SEKRETARIAT
 CHAT-BOT v1.2
 
 Benutzen Sie das Eingabefeld unten rechts,
-um Nachrichten szu versenden
+um Nachrichten zu versenden
 
 Danke."
 __meta__ = {
@@ -111,10 +108,10 @@ __meta__ = {
 
 [node name="MessageContainer" type="VBoxContainer" parent="CanvasLayer2/Messager/MessageViewer"]
 margin_right = 12.0
-margin_bottom = 23.0
+margin_bottom = 26.0
 
 [node name="ChatBubble2" parent="CanvasLayer2/Messager/MessageViewer/MessageContainer" instance=ExtResource( 6 )]
-margin_bottom = 23.0
+margin_bottom = 26.0
 align = 0
 bubbleColor = Color( 0.211765, 0.501961, 1, 1 )
 bubbleSize = Vector2( 250, 40 )

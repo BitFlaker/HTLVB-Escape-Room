@@ -141,7 +141,7 @@ func _on_FullScreen_pressed() -> void:
 func hideAllVisibleTSButtons() -> void:
 	if hasHidden: return
 	var level
-	var globalScenes = ["Globals", "ZZInGameUi"]
+	var globalScenes = ["Globals", "TransitionScene", "ZZInGameUi"]
 	
 	for c in get_tree().get_root().get_children():
 		if !globalScenes.has(c.name):

@@ -1,6 +1,5 @@
 extends Node2D
 
-var _globals
 var isInClassSubMenu := false
 var playingAnyAudio := false
 var codeSequence := []
@@ -14,7 +13,6 @@ func _ready() -> void:
 	$BackLayer/DialogBox/Content.text = "Du befindest dich nun in der Werkstatt der HTL. Hier lernst du handwerkliche Fähigkeiten und baust jedes Jahr neue Werkstücke. Die Tür ins Freie ist mit einem Code gesichert. Löse die Rätsel der einzelnen Werkstücke um das Gebäude zu verlassen."
 	$BackLayer/DialogBox.show()
 	rnd.randomize()
-	_globals = get_tree().get_root().get_node("Globals")
 	var strm
 	strm = $SmithingSound.stream as AudioStreamOGGVorbis
 	strm.set_loop(false)
@@ -136,7 +134,7 @@ func checkForCorrectCodeFirebasket() -> void:
 	var code = str(ccontainer.get_node("Audio1").text, ccontainer.get_node("Audio2").text, ccontainer.get_node("Audio3").text)
 	var expectedCode = str(codeSequence[0], codeSequence[1], codeSequence[2])
 	if code == expectedCode:
-		$BackLayer/Firebasket/Label.text = str(_globals.CODE_CL2)
+		$BackLayer/Firebasket/Label.text = str(Globals.CODE_CL2)
 		$AnimationPlayer.play("FifthClassNumber")
 		$BackLayer/Firebasket/Feuerkorbraetsel_low/OpenAngleGrinder.hide()
 		$BackLayer/Firebasket/Feuerkorbraetsel_low/OpenFireBasket.hide()

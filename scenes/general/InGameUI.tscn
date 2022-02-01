@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://font/besley/Besley-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/InGameUI.gd" type="Script" id=2]
 [ext_resource path="res://graphics/menu/PauseButton.png" type="Texture" id=3]
 [ext_resource path="res://graphics/menu/HintButton.png" type="Texture" id=4]
-[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://graphics/general/Note3.png" type="Texture" id=6]
 [ext_resource path="res://graphics/menu/fullscreen.png" type="Texture" id=9]
 [ext_resource path="res://graphics/lab/CheckButton.png" type="Texture" id=10]
@@ -16,21 +15,21 @@ font_data = ExtResource( 5 )
 [sub_resource type="DynamicFont" id=2]
 size = 32
 use_filter = true
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 128
-font_data = ExtResource( 1 )
+size = 104
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 128
 use_filter = true
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
@@ -250,8 +249,10 @@ __meta__ = {
 }
 
 [node name="TimeCounter" type="Label" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 471.0
+margin_bottom = 131.0
 rect_scale = Vector2( 0.25, 0.25 )
 custom_fonts/font = SubResource( 4 )
 text = "00:00:00"

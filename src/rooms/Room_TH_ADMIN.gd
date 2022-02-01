@@ -11,7 +11,7 @@ func _ready() -> void:
 		$CanvasLayer/BackButton.show()
 		$CanvasLayer2/VarsAndDesign.queue_free()
 		ZZInGameUi.onlyShowButtons()
-	thisLevelCode = get_tree().get_root().get_node("Globals").CODE_ADMIN
+	thisLevelCode = Globals.CODE_ADMIN
 	Globals.currentRoom = Globals.Rooms.ADMIN
 	ZZInGameUi.hideAllVisibleTSButtons()
 	$TotallyTopLayer/DialogBox/DialogOkButton.show()
@@ -55,6 +55,10 @@ func showAllButtons() -> void:
 	$CanvasLayer5/GetToAdminBot2.show()
 
 func _input(event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_SPACE) and Input.is_key_pressed(KEY_SHIFT) and Input.is_key_pressed(KEY_F):
+		if !$TotallyTopLayer/Sign.visible: $TotallyTopLayer/Sign.show()
+	else: 
+		if $TotallyTopLayer/Sign.visible: $TotallyTopLayer/Sign.hide()
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == false and anythingOpen:
 		var evLocal = make_input_local(event)
 		if isNote:
@@ -76,7 +80,7 @@ func _input(event: InputEvent) -> void:
 					ResetAfterBotClose()
 					anythingOpen = false
 					isChatBot = false
-					$TotallyTopLayer.remove_child($TotallyTopLayer.get_children()[1])
+					$TotallyTopLayer.remove_child($TotallyTopLayer.get_children()[3])
 				else:
 					justPressed = false
 			else:
@@ -130,3 +134,8 @@ func _on_DialogOkButton_released() -> void:
 
 func _on_BackButton_pressed() -> void:
 	Globals.returnToSelector()
+
+func _on_Sign_pressed() -> void:
+	ZZInGameUi.hideAllVisibleTSButtons()
+	$TotallyTopLayer/BackgroundUnfocus.show()
+	$TotallyTopLayer/BackgroundUnfocus/SignMessageContainer.start_countdown()

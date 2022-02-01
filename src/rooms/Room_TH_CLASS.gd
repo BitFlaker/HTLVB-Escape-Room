@@ -1,17 +1,17 @@
 extends Node2D
 
 var subj_text_FET_H = "FET\nFertigungstechnik"
-var subj_text_FET = "\n\n\n\nWelche Werkstoffe werden in\nF<A>hrzeugen\nverwendet und wie kann man diese Werkstoffe bearbeiten?"
+var subj_text_FET = "\n\n\nWelche Werkstoffe werden in\nF<A>hrzeugen\nverwendet und wie kann man diese Werkstoffe bearbeiten?"
 var subj_text_PLP_H = "PLP\nPlanung und Projektierung"
-var subj_text_PLP = "\n\n\n\n\nEn<T>wurf einer Heizungs-, Kältetechnik-, Lüftungs- und Sanitäranlage"
+var subj_text_PLP = "\n\n\n\nEn<T>wurf einer Heizungs-, Kältetechnik-, Lüftungs- und Sanitäranlage"
 var subj_text_TMB_H = "TMB\nTechnische Mechanik und Berechnung"
-var subj_text_TMB = "\n\n\n\n\nSt<A>tik einer Eisenbahnbrücke berechnen"
+var subj_text_TMB = "\n\n\n\nSt<A>tik einer Eisenbahnbrücke berechnen"
 var subj_text_AIIT_H = "AIIT\nAngewandte Informatik und fachspezifische Informationstechnik"
-var subj_text_AIIT = "\n\n\n\n\nProgrammieren von\n<M>icrocomputern in Haushaltsgeräten oder Garagentoren"
+var subj_text_AIIT = "\n\n\n\nProgrammieren von\n<M>icrocomputern in Haushaltsgeräten oder Garagentoren"
 var subj_text_SWP_H = "SWP\nSoftwareentwicklung und Projektmanagement"
-var subj_text_SWP = "\n\n\n\n\nWie prog<R>ammiert man ein Computerspiel?"
+var subj_text_SWP = "\n\n\n\nWie prog<R>ammiert man ein Computerspiel?"
 var subj_text_BET_H = "BET\nBetriebstechnik"
-var subj_text_BET = "\n\n\n\n\nWie ist ein <U>nternehmen aufgebaut und organisiert?"
+var subj_text_BET = "\n\n\n\nWie ist ein <U>nternehmen aufgebaut und organisiert?"
 var offsetToReach = Vector2.ZERO
 var prev := -1
 var currentCLASS = ""

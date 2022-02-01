@@ -7,7 +7,7 @@
 [ext_resource path="res://src/rooms/Room_LB_LAB.gd" type="Script" id=5]
 [ext_resource path="res://graphics/lab/backArrow.png" type="Texture" id=6]
 [ext_resource path="res://graphics/general/Note2.png" type="Texture" id=7]
-[ext_resource path="res://font/besley/Besley-Fatface.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://font/Uberal-regular.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
